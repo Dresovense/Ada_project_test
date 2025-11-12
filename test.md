@@ -15,4 +15,4 @@ a better cognitive process or even a better congitive output? It seems to me tha
 I kinda just want to see what this does tbh
 
 
-[img](/assets/plots/linguistic_profile_leaderboard.png)
+![img](/assets/plots/linguistic_profile_leaderboard.png)
