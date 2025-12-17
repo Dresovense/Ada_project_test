@@ -4,10 +4,109 @@ title: The War of The Learned
 subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 ---
 
-<img src="assets/reddit_posts/post_1.png" width="50%" >
-
+<img src="assets/reddit_posts/post_1.png" width="50%" > (change wording
+to more clearly emphasise "language quality". Maybe reduce the time implications
+and emphasise more "compared to other subreddits?")
 
 <div class="section" style="border-top: 0px;">
+    TLDR; [Maybe add a tldr, could emphasise that we are answering from a "user" per
+    perspective. I'm not 100% convinced]
+    <br><br>
+
+    It's not the first time I've seen such sentiments around here. Actually,
+    I find it super interesting, as such discussions about "linguistic quality" are not recent,
+    in fact you can find them pretty much at any point 
+    since we've begun to standardise our languages. Still, with the rise of 
+    social media and instant messaging, such perceptions have been on the rise
+    and it could be interesting to know if they are based on actual data. And
+    if so, what motivates the difference of language quality between users.
+
+    <br><br>
+
+    [Should we add here the different research questions? Or do we keep
+    the "comment based approach"? Or both?]
+
+</div>
+
+<div class="section">
+    <h1>Dataset</h1>
+    <div>
+        [Introduce what our dataset is]
+    </div>
+</div>
+
+<div class="section">
+    <h1>What is language quality?</h1>
+    The first thing we need to know when trying to understand language quality
+    on reddit, is to actually define what language quality <em>is</em>. We could 
+    define language quality of a text as "<b>the similarity between a text and
+    a shared construction of the "perfect" language</b>. [do you agree? should i remove it?]
+    However, we cannot apply directly such a definition to our data, we need to 
+    find a way to operationalise such a concept. Thus, I decided to take an
+    approach that combined both what our data provided and what different measures
+    suggested that this "shared construction" is, arriving at the following metric:
+
+    <div class="important_info">
+        <ul>
+            <li><b>Lexical Richness</b>: Ratio of unique words in a post</li>
+            <li><b>Syntactic Complexity</b>: Average words per sentence</li>
+            <li><b>Readability</b>: Automated Readability Index</li>
+            <li><b>Cognitive Depth</b>: LIWC reasoning and complexity measures</li>
+        </ul>
+        [add justifications]
+    </div>
+
+    <div class="plot">
+        <iframe 
+            src="assets/plots/linguistic_feature_histogram.html"
+            width="100%" 
+            height="600px" 
+            style="border:none;">
+        </iframe>
+    </div>
+    [add only the features that we end up choosing, maybe more if interactive]
+    <br>
+    [Also, develop on the insights of these features]
+
+    <img src="assets/plots/feature_correlation_matrix.png" width="70%">
+    [we should refocus the plot on our current variables, and maybe
+    add a interactive feature where we can explore other potential variables]
+
+    <br><br>
+    As you can see in this correlation matrix, our chosen features do not
+    seem to overlap, showing that they each embody one aspect of Linguistic
+    cognition and thus capture meaningful language patterns.
+
+    <br><br>
+    [We need to add more info, but depends on what features we end up choosing
+    in the end]
+</div>
+
+<div class="section">
+    <h1>2. Linguistic quality within a subreddit</h1>
+    <div>
+        [Add insights of posts within a specific subbreddit. ]
+    </div>
+</div>
+
+<div class="section">
+    <h1>3. Linguistic variation within a topic/community</h1>
+    <img src="assets/reddit_posts/comment_1.png" width="50%">
+    <div>
+        Introduce cluster methodology
+        <br><br>
+
+        Apply profile score within a community + apply plots 5/6 + others?
+        to see which subreddits come up on top and try to explain why
+        by looking at what makes these subreddits score well.
+        <br>
+        For interactivity we can make it so that they can explore the different
+        clusters we have
+    </div>
+</div>
+
+
+<div class="section">
     <h1>Structure [to be removed]</h1>
     <div>
         Story feature: Conversation between a reddit user seeking to understand language quality and ourselves,
@@ -30,6 +129,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             <li>4. Linguistic variation between different topics/communities</li>
             <li>5. Linguistic quality and negativity</li>
             <li>7. Conclusion</li>
+                <ul>Why focus on language quality?</ul>
         </ul> 
     </div>
     <div class="important_info">
@@ -45,35 +145,9 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     </div>
 </div>
 
-<div class="section">
-    <h1>1. What is Linguistic Quality?</h1>
-    <div>
-        Explain what linguistic quality is, why are we measuring it an how we are measuring it
-    </div>
-    <div class="plot">
-        <iframe 
-            src="assets/plots/linguistic_feature_histogram.html"
-            width="100%" 
-            height="600px" 
-            style="border:none;">
-        </iframe>
-    </div>
-</div>
 
-<div class="section">
-    <h1>2. Linguistic variation within a subreddit</h1>
-    <div>
-        
-    </div>
-</div>
 
-<div class="section">
-    <h1>3. Linguistic variation within a topic/community</h1>
-    <img src="assets/reddit_posts/comment_1.png" width="50%">
-    <div>
-        
-    </div>
-</div>
+
 
 <div class="section">
     <h1>4. Linguistic variation between different topics/communities</h1>
