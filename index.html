@@ -65,7 +65,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             links and blur the boundaries between different communities.
         </div>
 
-        <h3>Visualizing the Embedding Weaknesses</h3> <div>
+        <h3>Visualizing the Embedding Weaknesses</h3> 
+        <div>
             The following graphs illustrate the weaknesses mentioned previously.
             <br><br>
             On the left, a 2D projection (using dimensionality reduction) of the 50,000 subreddits shows the vectors 
@@ -80,13 +81,18 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
         <div style="display: flex; justify-content: space-around; align-items: flex-start; margin-top: 20px;">
             
-            <div style="text-align: center; width: 45%;">
-                <iframe src="assets/plots/reddit_map.html" style="width: 100%; height: 300px; border: none;"></iframe>
+            <div class="plot">
+                <iframe 
+                    src="/assets/plots/reddit_map.html"
+                    width="100%" 
+                    height="300" 
+                    style="border:none;">
+                </iframe>
                 <p><i>2D Projection of Subreddits</i></p>
             </div>
 
             <div style="text-align: center; width: 45%;">
-                <img src="assets/plots/distribution_of_closed_neigbors_embeddings.png" alt="Distribution" style="width: 100%; max-width: 400px;">
+                <img src="/assets/plots/distribution_of_closed_neigbors_embeddings.png" alt="Distribution" style="width: 100%; max-width: 400px;">
                 <p><i>Neighbor Distribution</i></p>
             </div>
         </div> 
