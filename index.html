@@ -111,7 +111,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             </div>
             <p style="margin-top: 10px; font-size: 0.9em;"><i>Figure 2: Distribution of Close Neighbors</i></p>
         </div>
-
+    </div>
 </div>
 
 </div>
@@ -206,7 +206,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         <p>
             Our initial attempt using <strong>K-means</strong> proved inadequate. 
             K-means inherently assumes spherical (circular) cluster shapes and requires 
-            <i>a-priori</i> knowledge of the exact number of clusters ($k$). Given the nature of 
+            <i>a-priori</i> knowledge of the exact number of clusters. Given the nature of 
             Reddit, communities are not perfectly circular; they overlap extensively due to the diverse 
             interests of users. Forcing these high-dimensional "clouds" into rigid spheres resulted 
             in a poor representation of the social reality.
@@ -229,7 +229,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
         <h4>Transition to a Network-Based Approach</h4>
         <p>
-            This led us to test a third methodology. By moving away from purely 
+            This led us to test a third methodology: using knn and leiden. By moving away from purely 
             density-based approaches (which struggle with the uniform density of the 
             "bulky circle"), we aimed for an algorithm capable of detecting community 
             structures within the noise. While initial results 
@@ -254,8 +254,86 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             To counter this, we focused on the "core" of each community: by retaining only the subreddits 
             closest to the centroids, we preserved the most representative samples. Ultimately, the final 
             dataset consists of 6,562 subreddits distributed across 36 high-cohesion clusters. </p>
-            </div>
+    </div>
 
+    <h4>Results</h4>   
+    <div style="display: flex; flex-direction: row; gap: 40px; margin: 30px 0;">
+
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100%; height: 500px; border: 2px solid #0143f8; border-radius: 8px; overflow: hidden; background: #0143f8; display: flex; align-items: center; justify-content: center;">
+                <img 
+                    src="assets/plots/embeddings_and_clustering/1st_clustering_box_no_filter.png" 
+                    alt="Distribution" 
+                    style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+            <p style="margin-top: 10px; font-size: 0.9em;"><i>Box plots of the clusters after first clustering</i></p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100%; height: 500px; border: 2px solid #0143f8; border-radius: 8px; overflow: hidden; background: #0143f8; display: flex; align-items: center; justify-content: center;">
+                <img 
+                    src="assets/plots/embeddings_and_clustering/1st_clustering_box_with_filter.png" 
+                    alt="Distribution" 
+                    style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+            <p style="margin-top: 10px; font-size: 0.9em;"><i>Box plots of the clusters after keeping only the 250 best subreddits</i></p>
+        </div>
+    </div>
+
+    <div>
+        <p>
+            The first plot on the left was made after the initial clustering. Clusters are classified by the number of points in each of them, going from 
+            8070 points for cluster 0 to 52 for cluster 29. we can see the large number of points considered as outliers because too far from the centroid.
+        </p>
+        <p>
+            The second plot on the right shows a real improvement after keepink only subreddits closed to the centroid. 
+            We see less outliers and a distance below 0.5. Note that the max distance is 1.
+        </p>
+        <p>
+            Nevertheless, clusters needed to be classified by hand. In order to do that, the 10 most centered from the centroid subreddit were displayed
+            and we kept only clusters that seemed to have a real community behind them.
+        </p>
+
+        <div style="display: flex; flex-direction: row; gap: 40px; margin: 30px 0;">
+            <div class="important_info">
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95em;">
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>2:</strong> Gaming / PC</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>4:</strong> Popular / Memes</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>6:</strong> Webmarketing / Dev</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>9:</strong> Music</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>10:</strong> TV / Movies</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>13:</strong> Sports (US)</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>14:</strong> Sports (Soccer)</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>15:</strong> League of Legends</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>16:</strong> Crypto / Blockchain</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>17:</strong> Fiction / Art</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>18:</strong> My Little Pony</li>
+                    <li style="padding: 4px 0;"><strong>19:</strong> YouTube / Creators</li>
+                </ul>
+
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95em;">
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>7:</strong> Adult Content</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>21:</strong> Adult Content</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>22:</strong> Adult Content</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>12:</strong> Feminine Celebrity</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>23:</strong> Japanese Subreddits</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>24:</strong> K-Pop</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>25:</strong> Metafandom</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>26:</strong> Wrestling</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>27:</strong> Retrogaming</li>
+                    <li style="padding: 4px 0; border-bottom: 1px solid #f1f5f9;"><strong>28:</strong> Vape</li>
+                    <li style="padding: 4px 0;"><strong>29:</strong> Educational Video</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.9em;"><i>Box plots of the clusters after keeping only the 250 best subreddits</i></p>
+            </div>
+            <div class="important_info">
+                
+                <p style="margin-top: 10px; font-size: 0.9em;"><i>Box plots of the clusters after keeping only the 250 best subreddits</i></p>
+            </div>
+        </div>
+
+        
+    </div>
     
     
 
