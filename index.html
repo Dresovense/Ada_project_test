@@ -135,6 +135,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     .ds-table tr:last-child td { border-bottom: none; }
     
     .ds-table-header { 
+        border: none;
         background: #e9ecef; 
         color: #555; 
         font-weight: bold; 
@@ -145,8 +146,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         text-transform: uppercase; 
     }
 
-    .val-high { color: var(--theme-color); font-weight: 700; }
-    .val-low { color: #d32f2f; font-weight: 700; }
+    .val-high { color: var(--theme-color); font-weight: 700; border: none; }
+    .val-low { color: #d32f2f; font-weight: 700; border: none; }
 
     /* 5. Abstracts & Todos */
     .ds-abstract {
@@ -734,7 +735,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                     </thead>
                     <tbody>
                         <!-- HIGH LQI SECTION -->
-                        <tr><td colspan="3" class="ds-table-header">🏆 Top 5 Academic</td></tr>
+                        <tr><td colspan="3" class="ds-table-header">🏆 Top 5</td></tr>
                         <tr><td>Hard Videogames</td><td class="val-high">0.654</td><td>0.549</td></tr>
                         <tr><td>Politics/Activism</td><td class="val-high">0.644</td><td>0.600</td></tr>
                         <tr><td>Crypto</td><td class="val-high">0.625</td><td>0.615</td></tr>
@@ -742,7 +743,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                         <tr><td>Sports (US)</td><td class="val-high">0.594</td><td>0.469</td></tr>
 
                         <!-- LOW LQI SECTION -->
-                        <tr><td colspan="3" class="ds-table-header" style="background:#ffebee; color:#d32f2f; border-top:2px solid #ddd;">🎪 Bottom 5 Casual</td></tr>
+                        <tr><td colspan="3" class="ds-table-header" style="background:#ffebee; color:#d32f2f; border-top:2px solid #ddd;">🎪 Bottom 5</td></tr>
                         <tr><td>Wrestling</td><td class="val-low">0.473</td><td>0.443</td></tr>
                         <tr><td>German Politics</td><td class="val-low">0.459</td><td>0.520</td></tr>
                         <tr><td>Retrogaming</td><td class="val-low">0.431</td><td>0.477</td></tr>
@@ -754,7 +755,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
             <!-- RIGHT: The Narrative Analysis -->
             <div>
-                <h4 style="margin-top: 0;">1. The "Think Tanks" (High LQI)</h4>
+                <h4 style="margin-top: 0;">1. The Crême de la crême</h4>
                 <p>
                     <b>The Gaming Paradox:</b> Surprisingly, the #1 spot is <b>Hard Videogames</b>. Unlike casual gaming, these communities rely on dense theory-crafting and mechanics analysis.
                 </p>
@@ -762,7 +763,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                     <b>Complexity in Crypto:</b> The <b>Crypto</b> cluster (#3) boasts the highest <b>Cognitive Depth (0.615)</b> in the entire dataset. This suggests that financial and technical discussions drive complex, causal language ("If X, then Y...") even more than <b>Politics</b> (#2).
                 </p>
 
-                <h4 style="margin-top: 25px; color: #d32f2f;">2. The "Casual" Web (Low LQI)</h4>
+                <h4 style="margin-top: 25px; color: #d32f2f;">2. The lower class</h4>
                 <p>
                     <b>Memetic Repetition:</b> <b>Memes/Oddities</b> scores very low (0.393). The data shows low Lexical Richness and Complexity, indicating communities built on repetitive templates and catchphrases rather than varied vocabulary.
                 </p>
