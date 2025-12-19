@@ -113,7 +113,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         line-height: 1.7;
     }
 
-    /* 4. Lists & Clusters */
+    /* 4. Lists, Clusters & Tables */
     .ds-list-box {
         background: #f8f9fa;
         padding: 20px;
@@ -127,6 +127,26 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     .ds-list-clean li { padding: 6px 0; border-bottom: 1px solid #e0e0e0; font-size: 0.95em; }
     .ds-list-clean li:last-child { border-bottom: none; }
     .ds-list-clean strong { color: var(--theme-color); display: inline-block; min-width: 30px; }
+
+    /* Data Tables inside list boxes */
+    .ds-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+    .ds-table th { color: #333; padding: 8px; text-align: left; font-weight: bold; border-bottom: 2px solid #ddd; }
+    .ds-table td { padding: 8px; border-bottom: 1px solid #eee; }
+    .ds-table tr:last-child td { border-bottom: none; }
+    
+    .ds-table-header { 
+        background: #e9ecef; 
+        color: #555; 
+        font-weight: bold; 
+        text-align: center; 
+        padding: 6px; 
+        font-size: 0.85em; 
+        letter-spacing: 1px; 
+        text-transform: uppercase; 
+    }
+
+    .val-high { color: var(--theme-color); font-weight: 700; }
+    .val-low { color: #d32f2f; font-weight: 700; }
 
     /* 5. Abstracts & Todos */
     .ds-abstract {
@@ -702,54 +722,39 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         <!-- START: Side-by-Side Data & Analysis -->
         <div class="ds-grid-2">
             
-            <!-- LEFT: The Raw Data Table (Scrollable) -->
+            <!-- LEFT: The Data Table -->
             <div class="ds-list-box" style="padding: 0; overflow: hidden; border-left: none; border-top: 4px solid var(--theme-color);">
-                <style>
-                    .scroll-container { max-height: 550px; overflow-y: auto; margin-top: 30px;}
-                    .stats-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
-                    .stats-table th { background: #f8f9fa; position: sticky; top: 0; z-index: 10; color: #333; padding: 10px; text-align: left; font-weight: bold; border-bottom: 2px solid #ddd; }
-                    .stats-table td { padding: 8px 10px; border-bottom: 1px solid #eee; }
-                    .stats-table tr:hover { background-color: #f1f3f5; }
-                    
-                    .section-header { background: #e9ecef; color: #555; font-weight: bold; text-align: center; padding: 8px; font-size: 0.9em; letter-spacing: 1px; text-transform: uppercase; }
-                    
-                    .val-high { color: var(--theme-color); font-weight: 700; }
-                    .val-low { color: #d32f2f; font-weight: 700; }
-                </style>
-                
-                <div class="scroll-container">
-                    <table class="stats-table">
-                        <thead>
-                            <tr>
-                                <th>Cluster Label</th>
-                                <th>LQI</th>
-                                <th>Cog. Depth</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- HIGH LQI SECTION -->
-                            <tr><td colspan="3" class="section-header">🏆 Top 5 Academic</td></tr>
-                            <tr><td>Hard Videogames</td><td class="val-high">0.654</td><td>0.549</td></tr>
-                            <tr><td>Politics/Activism</td><td class="val-high">0.644</td><td>0.600</td></tr>
-                            <tr><td>Crypto</td><td class="val-high">0.625</td><td>0.615</td></tr>
-                            <tr><td>Tech/Hardware</td><td class="val-high">0.602</td><td>0.527</td></tr>
-                            <tr><td>Sports (US)</td><td class="val-high">0.594</td><td>0.469</td></tr>
+                <table class="ds-table">
+                    <thead>
+                        <tr>
+                            <th>Cluster Label</th>
+                            <th>LQI</th>
+                            <th>Cog. Depth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- HIGH LQI SECTION -->
+                        <tr><td colspan="3" class="ds-table-header">🏆 Top 5 Academic</td></tr>
+                        <tr><td>Hard Videogames</td><td class="val-high">0.654</td><td>0.549</td></tr>
+                        <tr><td>Politics/Activism</td><td class="val-high">0.644</td><td>0.600</td></tr>
+                        <tr><td>Crypto</td><td class="val-high">0.625</td><td>0.615</td></tr>
+                        <tr><td>Tech/Hardware</td><td class="val-high">0.602</td><td>0.527</td></tr>
+                        <tr><td>Sports (US)</td><td class="val-high">0.594</td><td>0.469</td></tr>
 
-                            <!-- LOW LQI SECTION -->
-                            <tr><td colspan="3" class="section-header" style="background:#ffebee; color:#d32f2f; border-top:2px solid #ddd;">🎪 Bottom 5 Casual</td></tr>
-                            <tr><td>Wrestling</td><td class="val-low">0.473</td><td>0.443</td></tr>
-                            <tr><td>German Politics</td><td class="val-low">0.459</td><td>0.520</td></tr>
-                            <tr><td>Retrogaming</td><td class="val-low">0.431</td><td>0.477</td></tr>
-                            <tr><td>Memes/Oddities</td><td class="val-low">0.393</td><td>0.383</td></tr>
-                            <tr><td>Japanese</td><td class="val-low">0.359</td><td>0.370</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                        <!-- LOW LQI SECTION -->
+                        <tr><td colspan="3" class="ds-table-header" style="background:#ffebee; color:#d32f2f; border-top:2px solid #ddd;">🎪 Bottom 5 Casual</td></tr>
+                        <tr><td>Wrestling</td><td class="val-low">0.473</td><td>0.443</td></tr>
+                        <tr><td>German Politics</td><td class="val-low">0.459</td><td>0.520</td></tr>
+                        <tr><td>Retrogaming</td><td class="val-low">0.431</td><td>0.477</td></tr>
+                        <tr><td>Memes/Oddities</td><td class="val-low">0.393</td><td>0.383</td></tr>
+                        <tr><td>Japanese</td><td class="val-low">0.359</td><td>0.370</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- RIGHT: The Narrative Analysis -->
             <div>
-                <h4>1. The "Think Tanks" (High LQI)</h4>
+                <h4 style="margin-top: 0;">1. The "Think Tanks" (High LQI)</h4>
                 <p>
                     <b>The Gaming Paradox:</b> Surprisingly, the #1 spot is <b>Hard Videogames</b>. Unlike casual gaming, these communities rely on dense theory-crafting and mechanics analysis.
                 </p>
@@ -762,7 +767,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                     <b>Memetic Repetition:</b> <b>Memes/Oddities</b> scores very low (0.393). The data shows low Lexical Richness and Complexity, indicating communities built on repetitive templates and catchphrases rather than varied vocabulary.
                 </p>
                 <p>
-                    <b>Artifacts & Real-Time:</b> The <b>Japanese</b> cluster scores lowest due to our algorithms struggling with non-English text. Meanwhile, <b>Sports</b> clusters (Soccer, Wrestling) score on the lower end due to "Real-Time" communication—short, reactive comments during matches.
+                    <b>Artifacts & Real-Time:</b> The <b>Japanese</b> cluster scores lowest due to our algorithms struggling with non-English text. Meanwhile, <b>Retrogaming</b> scores surprisingly low compared to modern gaming, likely due to shorter, nostalgic comments rather than technical analysis.
                 </p>
             </div>
         </div>
