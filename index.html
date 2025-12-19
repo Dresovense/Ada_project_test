@@ -320,7 +320,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 <!-- SECTION: DEFINING LANGUAGE -->
 <div class="ds-section">
     <h1>2. What is language quality?</h1>
-    <p>
+    <div class="ds-abstract">
+        <strong>TLDR;</strong>  
         The first thing we need to know when trying to understand language quality
         on reddit, is to actually define what language quality <em>is</em>. We could 
         define language quality of a text as "<b>the similarity between a text and
@@ -328,8 +329,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         However, we cannot apply directly such a definition to our data, we need to 
         find a way to operationalise such a concept. Thus, I decided to take an
         approach that combined both what our data provided and what different measures
-        suggested that this "shared construction" is, arriving at the following metric:
-    </p>
+        suggested that this "shared construction" is, arriving at the following metrics.
+    </div>
 
     <!-- START: Metric Accordion -->
     <div class="accordion-wrapper">
@@ -425,29 +426,33 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 <!-- SECTION: SUBREDDIT QUALITY -->
 <div class="ds-section">
     <h1>3. Linguistic quality within specific subreddits</h1>
+
+    <div class="ds-abstract">
+        <strong>TLDR;</strong> 
+        Let's try to validate our instincts by checking up on the "best" and "worst" performing subreddits.
+    </div>
     
     <p>
-        Before clustering the whole internet, let's validate our metrics by looking at the extremes. 
-        Do the "smartest" and "dumbest" subreddits (according to our LQI score) match our intuition?
+        
     </p>
 
     <!-- Interactive Plot -->
     <div class="ds-frame" style="height: 800px;">
         <iframe src="assets/plots/metric_distributions.html"></iframe>
     </div>
-    <span class="ds-caption">Comparison of metrics distribution of Top 5 vs Bottom 5 subreddits (min 500 posts)</span>
+    <span class="ds-caption">Comparison of metrics distribution of Top 3 vs Bottom 3 subreddits (min 500 posts)</span>
     
     <div style="margin-top: 20px;">
         <p><b>Analysis of the Leaderboard:</b></p>
         <p>
-            The distinction is stark. The top-performing subreddits (<b>Academic Tier</b>) are dominated by specific, 
+            The distinction is stark. The top-performing subreddits are dominated by specific, 
             knowledge-heavy communities like <i>r/AskHistorians</i> or <i>r/Philosophy</i>. These communities enforce strict 
             moderation policies that require detailed, cited responses, naturally inflating their Structural Complexity and Cognitive Depth scores.
         </p>
         <p>
-            Conversely, the <b>Casual Tier</b> is populated by meme subreddits and rapid-fire gaming communities. 
+            Conversely, the bottom-performing subreddits are populated by meme subreddits and rapid-fire gaming communities. 
             However, "low quality" here doesn't necessarily mean "stupid." It often reflects a different <i>function</i> 
-            of language: efficient, high-context communication (memes, slang) that prioritizes speed and in-group signaling over formal correctness.
+            of language: efficient, high-context communication (memes, slang) that prioritizes speed and communities dependent text structures over formalities.
         </p>
     </div>
 </div>
@@ -458,7 +463,9 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     <img src="assets/reddit_posts/comment_1.png" class="ds-reddit-post">
 
     <h2>Introduction</h2>
-    <p>
+
+    <div class="ds-abstract">
+        <strong>TLDR;</strong> 
         What is a community? Oxford Languages defines it as: 'a group of people 
         living in the same place or having a particular characteristic in common.'
         Applying this to Reddit, we can define a community as a group of users sharing a 
@@ -466,7 +473,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         to the subreddit embeddings. By doing so, we aim to group subreddits with similar 
         vector representations into distinct clusters, effectively mapping out digital communities 
         based on shared user interests.
-    </p>
+    </div>
 
     <h2>Methodology</h2>
     <h3>Clustering Strategy and Challenges</h3>
@@ -549,12 +556,12 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         </div>
     </div>
 
-    <p> The initial plot (left) illustrates the distribution following the first clustering pass. Clusters were ranked by size, 
+    <p> <strong>The initial plot</strong> (left) illustrates the distribution following the first clustering pass. Clusters were ranked by size, 
         ranging from 8,070 subreddits in Cluster 0 to 52 in Cluster 29. A significant volume of data points was identified 
         as outliers due to their high distance from the respective centroids. 
     </p>
 
-    <p> The second plot (right) demonstrates a clear improvement following the distance-based pruning. By retaining only 
+    <p> <strong>The second plot</strong> (right) demonstrates a clear improvement following the distance-based pruning. By retaining only 
         the subreddits closest to each centroid, we achieved a substantial noise reduction, with most distances falling 
         below a 0.5 threshold. 
     </p>
@@ -648,11 +655,11 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
     <div style="margin-top: 30px;">
         <p><b>Interesting observations:</b></p>
-        <p> First, most of the clusters are dense and well-separated,
+        <p> <strong>First,</strong> most of the clusters are dense and well-separated,
             which successfully achieves our goal of clear topic categorization. 
         </p>
 
-        <p> Second, we noticed some interesting outliers within the clusters. When a subreddit 
+        <p> <strong>Second,</strong> we noticed some interesting outliers within the clusters. When a subreddit 
             seems unrelated but is located at the center of a cluster, it suggests that users from 
             that specific community actively use it, even if the connection isn't obvious at first. 
             However, some points are clearly misplaced: for example, <b>gamingnews</b> was classified 
@@ -662,7 +669,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             balance between minimizing outliers and retaining as many subreddits as possible. 
         </p>
 
-        <p> Third, there is a visible fragmentation within the "Adult Content" category, which is 
+        <p> <strong>Third,</strong> there is a visible fragmentation within the "Adult Content" category, which is 
             composed of several distinct sub-clusters. This is intentional: to avoid categorizing 
             communities based on specific fetishes, we grouped all pornography-related subreddits 
             under the general "Adult Content" label, even when the algorithm identified distinct 
