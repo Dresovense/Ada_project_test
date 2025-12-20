@@ -221,6 +221,94 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         display: inline-block;
         margin-bottom: 8px;
     }
+    
+    /* Container for the stack */
+    .insight-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Space between boxes */
+        margin: 40px 0;
+    }
+
+    /* Individual Card Style */
+    .insight-card {
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        border: 1px solid #e0e0e0;
+        overflow: hidden; /* Hides content when closed */
+        transition: all 0.3s ease;
+    }
+
+    /* The Clickable Header */
+    .insight-header {
+        padding: 20px 25px;
+        background: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 6px solid var(--theme-color); /* The colored strip */
+        transition: background-color 0.2s;
+    }
+
+    .insight-header:hover {
+        background-color: #f8f9fa;
+    }
+
+    .insight-title {
+        font-weight: 700;
+        font-size: 1.1em;
+        color: var(--text-main);
+        margin: 0;
+    }
+
+    .insight-icon {
+        font-size: 1.2em;
+        color: var(--theme-color);
+        transition: transform 0.3s ease;
+    }
+
+    /* The Unfolding Content */
+    .insight-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease;
+        opacity: 0;
+        background-color: #fafbfc;
+        border-top: 1px solid transparent;
+    }
+
+    .insight-content-inner {
+        padding: 25px;
+        color: var(--text-muted);
+        font-size: 0.95em;
+    }
+
+    /* ACTIVE STATE (When open) */
+    .insight-card.active {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        border-color: var(--theme-color);
+    }
+    
+    .insight-card.active .insight-header {
+        background-color: var(--theme-light);
+    }
+
+    .insight-card.active .insight-icon {
+        transform: rotate(180deg); /* Flip arrow */
+    }
+
+    .insight-card.active .insight-body {
+        opacity: 1;
+        border-top-color: #eee;
+    }
+
+    /* Custom borders for different topics to add variety */
+    .insight-card:nth-child(1) .insight-header { border-left-color: #2196F3; } /* Blue for Tech */
+    .insight-card:nth-child(2) .insight-header { border-left-color: #673AB7; } /* Purple for Conspiracy */
+    .insight-card:nth-child(3) .insight-header { border-left-color: #4CAF50; } /* Green for Sports */
+    .insight-card:nth-child(4) .insight-header { border-left-color: #F44336; } /* Red for Outliers */
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -839,63 +927,101 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         </span>
 
         <h3>Key Takeaways from the Data</h3>
-    
-        <div class="ds-grid-2">
-            <!-- Insight 1: Tech Paradox -->
-            <div class="ds-list-box">
-                <h4>1. The "Code vs. Prose" Paradox</h4>
-                <p>
-                    While <strong>Tech & Science</strong> is the highest scoring category overall (0.621), the internal divide is massive.
-                </p>
-                <ul class="ds-list-clean">
-                    <li>
-                        <strong>Academic Rigor:</strong> Subreddits like <em>r/badhistory</em> (0.977) and <em>r/askscience</em> (0.915) are again on top of the basket. Not much surprise here.
-                    </li>
-                    <li>
-                        <strong>The Utility Drop:</strong> Surprisingly, <em>r/programming</em> (0.396) and <em>r/ipad</em> (0.300) score very low. This is probably antother artifact like r/Japan or r/GermanPolitics as formalities quantized by our metrics are not much present in programming languages.
-                    </li>
-                </ul>
+        <p style="margin-bottom: 25px;">Click on the cards below to unfold the specific anomalies found in the data.</p>
+
+        <div class="insight-stack">
+
+            <!-- CARD 1: TECH -->
+            <div class="insight-card">
+                <div class="insight-header" onclick="toggleInsight(this)">
+                    <h4 class="insight-title">1. The "Code vs. Prose" Paradox</h4>
+                    <span class="insight-icon">▼</span>
+                </div>
+                <div class="insight-body">
+                    <div class="insight-content-inner">
+                        <p>
+                            While <strong>Tech & Science</strong> is the highest scoring category overall (0.621), the internal divide is massive.
+                        </p>
+                        <ul class="ds-list-clean">
+                            <li>
+                                <strong>Academic Rigor:</strong> Subreddits like <em>r/badhistory</em> (0.977) and <em>r/askscience</em> (0.915) represent the peak of Reddit's formal linguistic code.
+                            </li>
+                            <li>
+                                <strong>The Utility Drop:</strong> Surprisingly, <em>r/programming</em> (0.396) scores very low. This is essentially a data artifact: our algorithms look for sentence variation and prose. Programming discussions consist of code snippets, error logs, and succinct logic—formats that lack the specific linguistic structures ("formalities") our metrics are trained to quantify.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- Insight 2: The Conspiracy Anomaly -->
-            <div class="ds-list-box">
-                <h4>2. The "Pseudo-Intellectual" Trap</h4>
-                <p>
-                    One of the most fascinating findings is the high placement of fringe communities.
-                </p>
-                <p>
-                    <em>r/targetedenergyweapons</em> (0.803) scores significantly higher than most mainstream news subreddits. This confirms a linguistic theory: <strong>Conspiracy theorists mimic academic language.</strong> To sound authoritative, these communities most likely use dense vocabulary, complex causality (<em>"because X, then Y"</em>), and formal tone, resulting in a high LQI despite the content being factually dubious.
-                </p>
-            </div>
-        </div>
-
-        <div class="ds-grid-2">
-            <!-- Insight 3: The Fan vs. Analyst -->
-            <div class="ds-list-box">
-                <h4>3. Fans vs. Analysts (Sports & Gaming)</h4>
-                <p>
-                    Both Gaming and Sports show a clear "Tribal Split":
-                </p>
-                <ul class="ds-list-clean">
-                    <li>
-                        <strong>The Analysts:</strong> <em>r/truegaming</em> (0.904) and <em>r/atletico</em> (0.838) are top-tier. Similar to the hardcore gaming communities seen on the previous clustering method.
-                    </li>
-                    <li>
-                        <strong>The Fans:</strong> <em>r/pcmasterrace</em> (0.351) and <em>r/lakers</em> (0.423) are bottom-tier. These are most likely massive "Hype" communities where communication is phatic—cheering, memes, and short reactions.
-                    </li>
-                </ul>
+            <!-- CARD 2: CONSPIRACY -->
+            <div class="insight-card">
+                <div class="insight-header" onclick="toggleInsight(this)">
+                    <h4 class="insight-title">2. The "Pseudo-Intellectual" Trap</h4>
+                    <span class="insight-icon">▼</span>
+                </div>
+                <div class="insight-body">
+                    <div class="insight-content-inner">
+                        <p>
+                            One of the most fascinating findings is the high placement of fringe communities.
+                        </p>
+                        <p>
+                            <em>r/targetedenergyweapons</em> (0.803) scores significantly higher than most mainstream news subreddits. This confirms a linguistic theory: <strong>Conspiracy theorists mimic academic language.</strong> 
+                        </p>
+                        <p>
+                            To sound authoritative, these communities utilize dense vocabulary, complex causality connectors (<em>"consequently," "therefore"</em>), and a detached formal tone. They achieve a high LQI score because the <em>structure</em> of their language is complex, even if the <em>content</em> is factually dubious.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Insight 4: The Outliers -->
-            <div class="ds-list-box">
-                <h4>4. The Surrealist Outlier</h4>
-                <p>
-                    The single highest scoring subreddit in Entertainment is... <em>r/wackytictacs</em> (0.954).
-                </p>
-                <p>
-                    At first glance, this seems like a bug. It is a meme subreddit. However, it specializes in <strong>"Copypastas"</strong>—dense blocks of surreal, ironic text. To an algorithm, a 500-word block of intense, unique vocabulary looks like "High Quality" writing. This highlights the difficulty of distinguishing between <em>intelligence</em> and <em>complexity</em>.
-                </p>
+            <!-- CARD 3: FANS VS ANALYSTS -->
+            <div class="insight-card">
+                <div class="insight-header" onclick="toggleInsight(this)">
+                    <h4 class="insight-title">3. The Tribal Split: Fans vs. Analysts</h4>
+                    <span class="insight-icon">▼</span>
+                </div>
+                <div class="insight-body">
+                    <div class="insight-content-inner">
+                        <p>
+                            Both Gaming and Sports show a clear linguistic divide based on the <em>function</em> of the community:
+                        </p>
+                        <ul class="ds-list-clean">
+                            <li>
+                                <strong>The Analysts:</strong> Communities like <em>r/truegaming</em> (0.904) and <em>r/atletico</em> (0.838) are top-tier. They mirror the behavior of the "Hard Videogame" cluster identified in our earlier analysis—focusing on theory-crafting and tactics.
+                            </li>
+                            <li>
+                                <strong>The Fans:</strong> Mega-communities like <em>r/pcmasterrace</em> (0.351) and <em>r/lakers</em> (0.423) rank at the bottom. These are "Hype" communities where communication is phatic—cheering, memes, and short reactions—prioritizing speed and emotion over structure.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
+            <!-- CARD 4: OUTLIER -->
+            <div class="insight-card">
+                <div class="insight-header" onclick="toggleInsight(this)">
+                    <h4 class="insight-title">4. The Surrealist Outlier</h4>
+                    <span class="insight-icon">▼</span>
+                </div>
+                <div class="insight-body">
+                    <div class="insight-content-inner">
+                        <p>
+                            The single highest scoring subreddit in the Entertainment category is... <em>r/wackytictacs</em> (0.954).
+                        </p>
+                        <p>
+                            At first glance, this seems like a bug. It is a meme subreddit. However, it specializes in <strong>"Copypastas"</strong>—dense blocks of surreal, ironic text. 
+                        </p>
+                        <div class="ds-todo" style="margin: 10px 0;">
+                            To an algorithm, a 500-word block of intense, unique vocabulary looks like "High Quality" writing.
+                        </div>
+                        <p>
+                            This highlights a crucial limitation of NLP: distinguishing between authentic <em>intelligence</em> and algorithmic <em>complexity</em>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -960,6 +1086,29 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             content.style.maxHeight = null;
         } else {
             content.style.maxHeight = content.scrollHeight + "px";
+        }
+    }
+
+    function toggleInsight(headerElement) {
+        // Identify the parent card
+        const card = headerElement.parentElement;
+        
+        // Check if it is currently active
+        const isActive = card.classList.contains('active');
+
+        // Optional: Close all other cards first (Accordion behavior)
+        // If you want multiple to stay open, delete this block
+        const allCards = document.querySelectorAll('.insight-card');
+        allCards.forEach(c => {
+            c.classList.remove('active');
+            c.querySelector('.insight-body').style.maxHeight = null;
+        });
+
+        // Toggle the clicked card
+        if (!isActive) {
+            card.classList.add('active');
+            const body = card.querySelector('.insight-body');
+            body.style.maxHeight = body.scrollHeight + "px";
         }
     }
 </script>
