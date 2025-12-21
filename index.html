@@ -11,10 +11,13 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 <style>
     :root {
         /* CORE THEME COLORS */
-        --theme-color: #11224d;       /* The main Deep Blue */
-        --theme-light: #e6edff;       /* Very light blue for backgrounds */
-        --theme-accent: #f57f17;      /* Orange for alerts/todos */
-        
+        --theme-color: #11224d;
+        /* The main Deep Blue */
+        --theme-light: #e6edff;
+        /* Very light blue for backgrounds */
+        --theme-accent: #f57f17;
+        /* Orange for alerts/todos */
+
         /* TEXT & LAYOUT */
         --text-main: #333333;
         --text-muted: #555555;
@@ -33,7 +36,11 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         text-align: justify;
     }
-    .ds-section:first-of-type { border-top: none; padding-top: 0; }
+
+    .ds-section:first-of-type {
+        border-top: none;
+        padding-top: 0;
+    }
 
     .ds-grid-2 {
         display: grid;
@@ -50,23 +57,23 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     }
 
     /* --- VISUAL COMPONENTS --- */
-    
+
     /* 1. Plot Frames */
     .ds-frame {
         width: 100%;
         /* border: 2px solid var(--theme-color);  */
         border-radius: var(--border-radius);
-        background: white; 
+        background: white;
         overflow: hidden;
         margin-bottom: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
         position: relative;
     }
-    
+
     .ds-frame iframe {
         width: 100%;
         height: 100%;
@@ -89,14 +96,14 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         height: auto;
         object-fit: contain;
     }
-    
+
     .ds-reddit-post {
         display: block;
         margin: var(--spacing-item) auto var(--spacing-item) auto;
         max-width: 60%;
         border-radius: var(--border-radius);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     /* 3. Quotes */
@@ -107,8 +114,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         margin: 30px 0;
         font-style: italic;
         color: #444;
-        border-radius: var(--border-radius); 
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         font-size: 1.05em;
         line-height: 1.7;
     }
@@ -122,43 +129,87 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         height: fit-content;
         box-sizing: border-box;
     }
-    
-    .ds-list-clean ul { list-style: none; padding: 0; margin: 0; }
-    .ds-list-clean li { padding: 6px 0; border-bottom: 1px solid #e0e0e0; font-size: 0.95em; }
-    .ds-list-clean li:last-child { border-bottom: none; }
-    .ds-list-clean strong { color: var(--theme-color); display: inline-block; min-width: 30px; }
 
-    /* Data Tables inside list boxes */
-    .ds-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
-    .ds-table th { color: #333; padding: 8px; text-align: left; font-weight: bold; border: none; }
-    .ds-table td { padding: 8px; border: none; }
-    .ds-table tr:last-child td { border: none; }
-    
-    .ds-table-header { 
-        border: none;
-        background: #e9ecef; 
-        color: #555; 
-        font-weight: bold; 
-        text-align: center; 
-        padding: 6px; 
-        font-size: 0.85em; 
-        letter-spacing: 1px; 
-        text-transform: uppercase; 
+    .ds-list-clean ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
-    .val-high { color: var(--theme-color); font-weight: 700; border: 0 1px 0 1px; }
-    .val-low { color: #d32f2f; font-weight: 700; border: none; }
+    .ds-list-clean li {
+        padding: 6px 0;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 0.95em;
+    }
+
+    .ds-list-clean li:last-child {
+        border-bottom: none;
+    }
+
+    .ds-list-clean strong {
+        color: var(--theme-color);
+        display: inline-block;
+        min-width: 30px;
+    }
+
+    /* Data Tables inside list boxes */
+    .ds-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85em;
+    }
+
+    .ds-table th {
+        color: #333;
+        padding: 8px;
+        text-align: left;
+        font-weight: bold;
+        border: none;
+    }
+
+    .ds-table td {
+        padding: 8px;
+        border: none;
+    }
+
+    .ds-table tr:last-child td {
+        border: none;
+    }
+
+    .ds-table-header {
+        border: none;
+        background: #e9ecef;
+        color: #555;
+        font-weight: bold;
+        text-align: center;
+        padding: 6px;
+        font-size: 0.85em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .val-high {
+        color: var(--theme-color);
+        font-weight: 700;
+        border: 0 1px 0 1px;
+    }
+
+    .val-low {
+        color: #d32f2f;
+        font-weight: 700;
+        border: none;
+    }
 
     /* 5. Abstracts & Todos */
     .ds-abstract {
         background-color: var(--theme-light);
         border-left: 6px solid var(--theme-color);
         padding: 20px;
-        border-radius: var(--border-radius); 
+        border-radius: var(--border-radius);
         margin: var(--spacing-item) 0 var(--spacing-item) 0;
         color: var(--text-main);
     }
-    
+
     .ds-todo {
         background-color: #fff9c4;
         border: 1px dashed var(--theme-accent);
@@ -171,12 +222,12 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
     /* 6. Metric Accordion Styling */
     .accordion-wrapper {
-        border-left: 6px solid #0b1e47; 
+        border-left: 6px solid #0b1e47;
         background-color: #f8f9fa;
         padding: 20px;
         margin: 25px 0;
         border-radius: var(--border-radius);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
 
     .metric-item {
@@ -187,7 +238,10 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         overflow: hidden;
         transition: box-shadow 0.2s;
     }
-    .metric-item:hover { box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+    .metric-item:hover {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
 
     .metric-header {
         display: flex;
@@ -197,11 +251,25 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         cursor: pointer;
         background-color: #fff;
     }
-    .metric-header:hover { background-color: #f9f9f9; }
 
-    .metric-name { font-weight: bold; font-size: 1.1em; color: var(--theme-color); }
-    .metric-arrow { color: var(--theme-color); transition: transform 0.3s; }
-    .metric-item.active .metric-arrow { transform: rotate(180deg); }
+    .metric-header:hover {
+        background-color: #f9f9f9;
+    }
+
+    .metric-name {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: var(--theme-color);
+    }
+
+    .metric-arrow {
+        color: var(--theme-color);
+        transition: transform 0.3s;
+    }
+
+    .metric-item.active .metric-arrow {
+        transform: rotate(180deg);
+    }
 
     .metric-content {
         max-height: 0;
@@ -209,8 +277,14 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         transition: max-height 0.3s ease-out;
         padding: 0 15px;
     }
-    .metric-inner { padding: 15px 0; font-size: 0.95em; color: #333; border-top: 1px solid #eee; }
-    
+
+    .metric-inner {
+        padding: 15px 0;
+        font-size: 0.95em;
+        color: #333;
+        border-top: 1px solid #eee;
+    }
+
     .metric-formula {
         background-color: #f1f3f5;
         padding: 4px 8px;
@@ -221,12 +295,13 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         display: inline-block;
         margin-bottom: 8px;
     }
-    
+
     /* Container for the stack */
     .insight-stack {
         display: flex;
         flex-direction: column;
-        gap: 15px; /* Space between boxes */
+        gap: 15px;
+        /* Space between boxes */
         margin: 40px 0;
     }
 
@@ -234,10 +309,11 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     .insight-card {
         background: white;
         border-radius: var(--border-radius);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         /* border: 1px solid #e0e0e0; */
         border: none;
-        overflow: hidden; /* Hides content when closed */
+        overflow: hidden;
+        /* Hides content when closed */
         transition: all 0.3s ease;
     }
 
@@ -249,7 +325,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-left: 6px solid var(--theme-color); /* The colored strip */
+        border-left: 6px solid var(--theme-color);
+        /* The colored strip */
         transition: background-color 0.2s;
     }
 
@@ -288,16 +365,17 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
     /* ACTIVE STATE (When open) */
     .insight-card.active {
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         border-color: var(--theme-color);
     }
-    
+
     .insight-card.active .insight-header {
         background-color: var(--theme-light);
     }
 
     .insight-card.active .insight-icon {
-        transform: rotate(180deg); /* Flip arrow */
+        transform: rotate(180deg);
+        /* Flip arrow */
     }
 
     .insight-card.active .insight-body {
@@ -306,15 +384,40 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     }
 
     /* Custom borders for different topics to add variety */
-    .insight-card:nth-child(1) .insight-header { border-left-color: #2196F3; } /* Blue for Tech */
-    .insight-card:nth-child(2) .insight-header { border-left-color: #673AB7; } /* Purple for Conspiracy */
-    .insight-card:nth-child(3) .insight-header { border-left-color: #4CAF50; } /* Green for Sports */
-    .insight-card:nth-child(4) .insight-header { border-left-color: #F44336; } /* Red for Outliers */
+    .insight-card:nth-child(1) .insight-header {
+        border-left-color: #2196F3;
+    }
+
+    /* Blue for Tech */
+    .insight-card:nth-child(2) .insight-header {
+        border-left-color: #673AB7;
+    }
+
+    /* Purple for Conspiracy */
+    .insight-card:nth-child(3) .insight-header {
+        border-left-color: #4CAF50;
+    }
+
+    /* Green for Sports */
+    .insight-card:nth-child(4) .insight-header {
+        border-left-color: #F44336;
+    }
+
+    /* Red for Outliers */
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-        .ds-grid-2, .ds-flex-row { grid-template-columns: 1fr; flex-direction: column; }
-        .ds-reddit-post, .ds-img-main { max-width: 100%; }
+
+        .ds-grid-2,
+        .ds-flex-row {
+            grid-template-columns: 1fr;
+            flex-direction: column;
+        }
+
+        .ds-reddit-post,
+        .ds-img-main {
+            max-width: 100%;
+        }
     }
 </style>
 
@@ -322,7 +425,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 <!-- CONTENT START                                           -->
 <!-- ======================================================= -->
 
-<a href="https://www.reddit.com/r/TheoryOfReddit/comments/1pcic9v/is_it_just_me_or_has_the_baseline_quality_of/" target="_blank">
+<a href="https://www.reddit.com/r/TheoryOfReddit/comments/1pcic9v/is_it_just_me_or_has_the_baseline_quality_of/"
+    target="_blank">
     <img src="assets/reddit_posts/real_post_1.png" class="ds-reddit-post">
 </a>
 
@@ -331,10 +435,13 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 <div class="ds-section">
     <!-- Abstract Box -->
     <div class="ds-abstract">
-        <strong>TLDR;</strong> Is the internet really getting "dumber", or is it just getting more diverse? We analyzed millions of Reddit posts using 300-dimensional embeddings and linguistic algorithms to map the "Digital Dialects" of the internet. We found that while some communities thrive on simplicity, high-complexity language is alive and well—often in the most unexpected places.
+        <strong>TLDR;</strong> Is the internet really getting "dumber", or is it just getting more diverse? We analyzed
+        millions of Reddit posts using 300-dimensional embeddings and linguistic algorithms to map the "Digital
+        Dialects" of the internet. We found that while some communities thrive on simplicity, high-complexity language
+        is alive and well—often in the most unexpected places.
     </div>
 
-<!--     <p>
+    <!--     <p>
         It's not the first time I've seen such sentiments around here. Actually,
         I find it super interesting, as such discussions about "linguistic quality" are not recent.
         In fact you can find them pretty much at any point since we've begun to standardise our languages. 
@@ -346,7 +453,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     <p>
         The discussion about language quality and its downfall is not recent and has been ever present since
         humans first started to talk. Just like Molière was considered as writing how the lower class talked,
-        he is now considered the standard of the french language, showing how standards evolve overtime. However, 
+        he is now considered the standard of the french language, showing how standards evolve overtime. However,
         it is interesting to note that while social media platforms
         have always been the target of mockery when talking about language quality, we do see sentiments
         of users criticising its downfall within the platform itself. Are these concerns verifiable, or can
@@ -358,7 +465,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         <ol>
             <li>How to quantify linguistic quality? Which metrics can reliably be used?</li>
             <li>To what extent linguistic quality varies between users of a subreddit?</li>
-            <li>How does linguistic quality vary across broad subreddit communities? Which stand out 
+            <li>How does linguistic quality vary across broad subreddit communities? Which stand out
                 in terms of higher or lower quality and why?
             </li>
             <li>How does linguistic quality relate to sentiment and tone across Reddit? In particular,
@@ -368,73 +475,78 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     </div>
 
     <div class="ds-todo">
-        [Optional: We can formalize Research Questions (RQ1, RQ2) here if we want a more academic tone, or leave it narrative.]
+        [Optional: We can formalize Research Questions (RQ1, RQ2) here if we want a more academic tone, or leave it
+        narrative.]
     </div>
 </div>
 
 <!-- SECTION: DATASET -->
 <div class="ds-section">
     <h1>1. Dataset</h1>
-    
+
     <h2>Hyperlinks</h2>
     <p>
-        Our primary dataset consists of the "Subreddit Hyperlinks Network." This is a massive collection 
-        of posts where one subreddit links to another. It provides us with the raw text body of the posts, 
-        timestamps, and sentiment labels, allowing us to analyze not just what is said, but the context in which it is said.
+        Our primary dataset consists of the "Subreddit Hyperlinks Network." This is a massive collection
+        of posts where one subreddit links to another. It provides us with the raw text body of the posts,
+        timestamps, and sentiment labels, allowing us to analyze not just what is said, but the context in which it is
+        said.
     </p>
 
     <h2>Embeddings</h2>
-    
+
     <h3>Introduction</h3>
     <p>
-        Along with the initial subreddit hyperlinks dataset, we used another dataset: 
+        Along with the initial subreddit hyperlinks dataset, we used another dataset:
         the embedding vectors of subreddits (available on the SNAP website).
     </p>
     <p>
-        These embeddings are high-dimensional vectors (in our case, 300 dimensions). 
-        They are designed to represent similarities between data points in a complex space. 
-        Specifically, each of the ~50,000 subreddits is assigned a 300-dimensional vector. 
-        These vectors indicate similarity based on user behavior: if many users post in 
+        These embeddings are high-dimensional vectors (in our case, 300 dimensions).
+        They are designed to represent similarities between data points in a complex space.
+        Specifically, each of the ~50,000 subreddits is assigned a 300-dimensional vector.
+        These vectors indicate similarity based on user behavior: if many users post in
         the same group of subreddits, those subreddits will be closer to each other in this
         300-dimensional space.
     </p>
     <p>
-        These embeddings are very useful for our research on linguistic quality and our goal to determine 
-        'who speaks the best.' They allow us to identify clusters of subreddits where users share similar 
+        These embeddings are very useful for our research on linguistic quality and our goal to determine
+        'who speaks the best.' They allow us to identify clusters of subreddits where users share similar
         interests, effectively grouping subreddits into distinct communities.
     </p>
-    
+
     <h3>Weakness</h3>
     <p>
         While these embeddings are powerful and perform well, the dataset faces challenges due to the
-        nature of Reddit communities and the high number of data.    
+        nature of Reddit communities and the high number of data.
     </p>
-    
+
     <div class="ds-blockquote">
-        "One might assume that a dataset of 50,000 subreddits is relatively small. However, each 
-        entry is a 300-dimensional vector... Calculating the similarity between every possible pair 
+        "One might assume that a dataset of 50,000 subreddits is relatively small. However, each
+        entry is a 300-dimensional vector... Calculating the similarity between every possible pair
         of subreddits is a computationally intensive task...
         To overcome this, we implemented a batch processing approach."
     </div>
 
     <p>
-        Indeed communities are not perfectly separated into 'clean' clusters where we can easily say: 
+        Indeed communities are not perfectly separated into 'clean' clusters where we can easily say:
         'These users are only interested in politics.' Most users have diverse interests and post in a wide
-        variety of subreddits. This creates a significant amount of overlap between vectors. Consequently, 
-        some subreddits appear very close to many others in the 300-dimensional space, which can create 'noisy' 
+        variety of subreddits. This creates a significant amount of overlap between vectors. Consequently,
+        some subreddits appear very close to many others in the 300-dimensional space, which can create 'noisy'
         links and blur the boundaries between different communities.
     </p>
 
-    <h3>Visualizing the Embedding Weaknesses</h3> 
+    <h3>Visualizing the Embedding Weaknesses</h3>
     <p>
         The following graphs illustrate the "fuzzy" nature of these communities.
-        On <b>Figure 1</b>, a 2D projection (using dimensionality reduction) of the 50,000 subreddits shows the vectors 
-            forming a large, dense circle with significant overlap. This visualization confirms that many communities
-            are not clearly separated.
-        On <b>Figure 2</b>, the graph displays the distribution of close neighbors (subreddits with a cosine similarity > 0.8).
-            Cosine similarity measures the orientation of two vectors in the 300-dimensional space, ranging from -1 (opposite)
-            to 1 (identical). The distribution reveals a non-negligible number of subreddits that have more than 10,000 neighbors 
-            with over 80% similarity.
+        On <b>Figure 1</b>, a 2D projection (using dimensionality reduction) of the 50,000 subreddits shows the vectors
+        forming a large, dense circle with significant overlap. This visualization confirms that many communities
+        are not clearly separated.
+        On <b>Figure 2</b>, the graph displays the distribution of close neighbors (subreddits with a cosine similarity
+        > 0.8).
+        Cosine similarity measures the orientation of two vectors in the 300-dimensional space, ranging from -1
+        (opposite)
+        to 1 (identical). The distribution reveals a non-negligible number of subreddits that have more than 10,000
+        neighbors
+        with over 80% similarity.
     </p>
 
     <!-- PLOT 1 -->
@@ -448,7 +560,8 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     <!-- PLOT 2 -->
     <div style="margin-bottom: 40px;">
         <div class="ds-frame" style="height: 500px;">
-            <img src="assets/plots/embeddings_and_clustering/distribution_of_closed_neigbors_embeddings.png" class="ds-img-responsive">
+            <img src="assets/plots/embeddings_and_clustering/distribution_of_closed_neigbors_embeddings.png"
+                class="ds-img-responsive">
         </div>
         <span class="ds-caption">Figure 2: Distribution of Close Neighbors</span>
     </div>
@@ -458,12 +571,12 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 <div class="ds-section">
     <h1>2. What is language quality?</h1>
     <div class="ds-abstract">
-        <strong>TLDR;</strong>  
+        <strong>TLDR;</strong>
         The first thing we need to know when trying to understand language quality
-        on reddit, is to actually define what language quality <em>is</em>. We can 
+        on reddit, is to actually define what language quality <em>is</em>. We can
         define language quality of a text as "<b>the similarity between a text and
-        a shared construction of the "perfect" language</b>".
-        However, we cannot apply directly such a definition to our data. Instead we need to 
+            a shared construction of the "perfect" language</b>".
+        However, we cannot apply directly such a definition to our data. Instead we need to
         find a way to operationalise such a concept. Thus, we decided to take an
         approach that combined both what our data provided and what different measures
         suggested that this "shared construction" is, arriving at the following metrics.
@@ -471,10 +584,11 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
     <!-- START: Metric Accordion -->
     <div class="accordion-wrapper">
-        <p style="margin-top:0;">To calculate the <b>Linguistic Quality Index (LQI)</b>, we aggregated four robust dimensions. Click below to see the exact formulas derived from our data processing.</p>
-        
+        <p style="margin-top:0;">To calculate the <b>Linguistic Quality Index (LQI)</b>, we aggregated four robust
+            dimensions. Click below to see the exact formulas derived from our data processing.</p>
+
         <div class="metric-list">
-            
+
             <!-- Metric 1 -->
             <div class="metric-item">
                 <div class="metric-header" onclick="toggleMetric(this)">
@@ -483,7 +597,9 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 <div class="metric-content">
                     <div class="metric-inner">
                         <div class="metric-formula">log(Unique Words) / log(Total Words)</div>
-                        <p>Standard Type-Token Ratio is biased against long texts (the longer you write, the more you repeat common words). We used Herdan's C (Log-TTR) to ensure fair comparison between short comments and long rants.</p>
+                        <p>Standard Type-Token Ratio is biased against long texts (the longer you write, the more you
+                            repeat common words). We used Herdan's C (Log-TTR) to ensure fair comparison between short
+                            comments and long rants.</p>
                     </div>
                 </div>
             </div>
@@ -496,7 +612,9 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 <div class="metric-content">
                     <div class="metric-inner">
                         <div class="metric-formula">(0.5 * Avg Word Len) + log(Avg Sentence Len)</div>
-                        <p>Simple sentence length is noisy (a 50-word list of groceries is not "complex"). We created a composite score that rewards using longer, more complex words <i>within</i> structurally longer sentences.</p>
+                        <p>Simple sentence length is noisy (a 50-word list of groceries is not "complex"). We created a
+                            composite score that rewards using longer, more complex words <i>within</i> structurally
+                            longer sentences.</p>
                     </div>
                 </div>
             </div>
@@ -509,7 +627,9 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 <div class="metric-content">
                     <div class="metric-inner">
                         <div class="metric-formula">Articles - Pronouns - (2 * Swearing) - Uppercase</div>
-                        <p>Based on Heylighen & Dewaele (2002). This distinguishes "Contextual" language (casual, chatty, subjective: "I think...") from "Formal" language (objective, noun-heavy: "The data suggests...").</p>
+                        <p>Based on Heylighen & Dewaele (2002). This distinguishes "Contextual" language (casual,
+                            chatty, subjective: "I think...") from "Formal" language (objective, noun-heavy: "The data
+                            suggests...").</p>
                     </div>
                 </div>
             </div>
@@ -521,8 +641,10 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 </div>
                 <div class="metric-content">
                     <div class="metric-inner">
-                        <div class="metric-formula">Mean(LIWC_CogMech + LIWC_Insight + LIWC_Cause)</div>
-                        <p>Aggregates words related to processing information (<i>think, know</i>) and causality (<i>because, hence</i>). It distinguishes between descriptive storytelling or emotional venting and analytical reasoning.</p>
+                        <div class="metric-formula">Insight + 2 * Exclusivity + 5 * Tentativeness + Integration - Certainty + 10 * log(Long Words Frequency) + 5 * Numerical Concepts</div>
+                        <p>Quantifies intellectual nuance. It rewards "Distinction Markers" (e.g., <i>but</i>,
+                            <i>however</i>) and "Tentative Language" (e.g., <i>perhaps</i>, <i>likely</i>) while penalizing "Certainty
+                            Markers" (e.g., <i>always</i>, <i>never</i>).</p>
                     </div>
                 </div>
             </div>
@@ -535,10 +657,13 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     <div class="ds-frame" style="height: 530px;">
         <iframe src="assets/plots/linguistic_feature_histogram.html"></iframe>
     </div>
-    
+
     <p>
-        The histograms above show distinct characteristics. For example, <b>lexical_richness</b> shows a sharp spike at 1.0. This artifact represents very short posts (e.g., "Yes", "lol") where every word is unique. This confirms why simple ratios fail and why we need robust metrics. 
-        Meanwhile, <b>cognitive_depth</b> often spikes at zero, indicating that a significant portion of Reddit communication is purely phatic or descriptive, lacking explicit reasoning words.
+        The histograms above show distinct characteristics. For example, <b>lexical_richness</b> shows a sharp spike at
+        1.0. This artifact represents very short posts (e.g., "Yes", "lol") where every word is unique. This confirms
+        why simple ratios fail and why we need robust metrics.
+        Meanwhile, <b>cognitive_depth</b> often spikes at zero, indicating that a significant portion of Reddit
+        communication is purely phatic or descriptive, lacking explicit reasoning words.
     </p>
 
     <div class="ds-grid-2">
@@ -548,15 +673,15 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         <div>
             <h4>Orthogonality of Features</h4>
             <p>
-                An essential check was to ensure our metrics weren't just measuring the same thing four times. 
-                As the correlation matrix shows, our chosen features have low overlap. 
+                An essential check was to ensure our metrics weren't just measuring the same thing four times.
+                As the correlation matrix shows, our chosen features have low overlap.
             </p>
             <!-- <p>
                 Interestingly, <b>Lexical Richness</b> is negatively correlated with <b>Syntactic Complexity</b>. This makes sense: 
                 complex academic texts often reuse specific terminology (low richness) within very long, complex sentences. 
                 This confirms that each feature captures a unique dimension of the "Linguistic Profile."
             </p> -->
-            <p> 
+            <p>
                 Interestingly, <b>Structural Complexity</b> and <b>Cognitive Depth</b> have
                 the highest amount of correlation between our four metrics. While it is low enough
                 to understand that measure different dimensions of the "linguisic profile", it can
@@ -564,7 +689,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 make use of more complex words and sentence structures.
             </p>
             <p>
-                Moreover, we also see a non existent correlation between <b>LQI</b> and 
+                Moreover, we also see a non existent correlation between <b>LQI</b> and
                 different sentiment metrics. While this will be developped in a further section,
                 it already hints to a non-link between sentiments and linguistic quality.
             </p>
@@ -577,30 +702,35 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     <h1>3. Linguistic quality within specific subreddits</h1>
 
     <div class="ds-abstract">
-        <strong>TLDR;</strong> 
+        <strong>TLDR;</strong>
         Let's try to validate our instincts by checking up on the "best" and "worst" performing subreddits.
     </div>
-    
+
     <!-- Interactive Plot -->
     <div class="ds-frame" style="height: 630px;">
         <iframe src="assets/plots/metric_distributions.html"></iframe>
     </div>
     <span class="ds-caption">
-            Normalized distribution of linguistic metrics from individual subreddits. 
-            Y-Axis represents percentage density to allow fair comparison between with differently sized subs with at least 500 posts. (single or double click on legend to isolate subreddits)
+        Normalized distribution of linguistic metrics from individual subreddits.
+        Y-Axis represents percentage density to allow fair comparison between with differently sized subs with at least
+        500 posts. (single or double click on legend to isolate subreddits)
     </span>
-    
+
     <div style="margin-top: 20px;">
         <p><b>Analysis of the Leaderboard:</b></p>
         <p>
-            The distinction is stark. The top-performing subreddits are dominated by specific, 
-            knowledge-heavy communities like <i>r/AskHistorians</i> or <i>r/explainlikeimfive</i>. These communities enforce strict 
-            moderation policies that require detailed, cited responses, naturally inflating their Structural Complexity and Cognitive Depth scores.
+            The distinction is stark. The top-performing subreddits are dominated by specific,
+            knowledge-heavy communities like <i>r/AskHistorians</i> or <i>r/explainlikeimfive</i>. These communities
+            enforce strict
+            moderation policies that require detailed, cited responses, naturally inflating their Structural Complexity
+            and Cognitive Depth scores.
         </p>
         <p>
-            Conversely, the bottom-performing subreddits are populated by meme subreddits and rapid-fire gaming communities. 
-            However, "low quality" here doesn't necessarily mean "stupid." It often reflects a different <i>function</i> 
-            of language: efficient, high-context communication (memes, slang) that prioritizes speed and communities dependent text structures over formalities.
+            Conversely, the bottom-performing subreddits are populated by meme subreddits and rapid-fire gaming
+            communities.
+            However, "low quality" here doesn't necessarily mean "stupid." It often reflects a different <i>function</i>
+            of language: efficient, high-context communication (memes, slang) that prioritizes speed and communities
+            dependent text structures over formalities.
         </p>
     </div>
 </div>
@@ -613,24 +743,24 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     <!-- <h2>Introduction</h2> -->
 
     <div class="ds-abstract">
-        <strong>TLDR;</strong> 
-        What is a community? Oxford Languages defines it as: 'a group of people 
+        <strong>TLDR;</strong>
+        What is a community? Oxford Languages defines it as: 'a group of people
         living in the same place or having a particular characteristic in common.'
-        Applying this to Reddit, we can define a community as a group of users sharing a 
+        Applying this to Reddit, we can define a community as a group of users sharing a
         common interest. In this section, our objective is to apply clustering algorithms
-        to the subreddit embeddings. By doing so, we aim to group subreddits with similar 
-        vector representations into distinct clusters, effectively mapping out digital communities 
+        to the subreddit embeddings. By doing so, we aim to group subreddits with similar
+        vector representations into distinct clusters, effectively mapping out digital communities
         based on shared user interests.
     </div>
 
     <h2>Methodology</h2>
     <h3>Clustering Strategy and Challenges</h3>
-    
+
     <p>
-        The primary challenge in this analysis stems from <strong>"bridges"</strong>: 
-        subreddits frequented by users from vastly different backgrounds. These bridges 
-        exhibit a high number of neighbors, making them notoriously difficult to classify. 
-        In standard clustering, these points either force the creation of massive, noisy clusters 
+        The primary challenge in this analysis stems from <strong>"bridges"</strong>:
+        subreddits frequented by users from vastly different backgrounds. These bridges
+        exhibit a high number of neighbors, making them notoriously difficult to classify.
+        In standard clustering, these points either force the creation of massive, noisy clusters
         (K-means) or are discarded entirely as outliers (HDBSCAN).
     </p>
 
@@ -638,17 +768,19 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         <div class="ds-list-clean">
             <ul>
                 <li>
-                    <strong>Why K-means Failed:</strong> Our initial attempt using <strong>K-means</strong> proved inadequate. 
-                    K-means inherently assumes spherical (circular) cluster shapes and requires 
-                    <i>a-priori</i> knowledge of the exact number of clusters. Given the nature of 
-                    Reddit, communities are not perfectly circular; they overlap extensively due to the diverse 
-                    interests of users. Forcing these high-dimensional "clouds" into rigid spheres resulted 
+                    <strong>Why K-means Failed:</strong> Our initial attempt using <strong>K-means</strong> proved
+                    inadequate.
+                    K-means inherently assumes spherical (circular) cluster shapes and requires
+                    <i>a-priori</i> knowledge of the exact number of clusters. Given the nature of
+                    Reddit, communities are not perfectly circular; they overlap extensively due to the diverse
+                    interests of users. Forcing these high-dimensional "clouds" into rigid spheres resulted
                     in a poor representation of the social reality.
                 </li>
                 <li>
-                    <strong>The Density Limitation of HDBSCAN:</strong> was a logical next step due to its ability to handle 
-                    non-spherical shapes. However, it proved too selective for our dataset. 
-                    While it identified high-density cores, the resulting clusters were too 
+                    <strong>The Density Limitation of HDBSCAN:</strong> was a logical next step due to its ability to
+                    handle
+                    non-spherical shapes. However, it proved too selective for our dataset.
+                    While it identified high-density cores, the resulting clusters were too
                     small, and a significant portion of the subreddits were labeled as outliers.
                 </li>
             </ul>
@@ -657,67 +789,74 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
     <h3>Refined Clustering Approach</h3>
     <p>
-        At this stage, we realized our fundamental assumption was flawed: we were 
-        looking for <strong>predefined topics</strong> (e.g., "politics", "video games"). 
-        In reality, embeddings capture <strong>community behaviors</strong>. A cluster 
-        might not represent a single subject, but rather a specific demographic of 
+        At this stage, we realized our fundamental assumption was flawed: we were
+        looking for <strong>predefined topics</strong> (e.g., "politics", "video games").
+        In reality, embeddings capture <strong>community behaviors</strong>. A cluster
+        might not represent a single subject, but rather a specific demographic of
         users who share multiple interests.
     </p>
 
     <p>To refine the methodology, three key improvements were implemented:</p>
     <ol>
         <li><strong>Scope Restriction:</strong> Clustering performed exclusively on subreddits in our dataset.</li>
-        <li><strong>Recursive Refinement:</strong> Clusters were manually reviewed, and noisy groups were re-processed to achieve finer granularity.</li>
-        <li><strong>Representative Sampling:</strong> Only the 250 subreddits closest to each cluster's centroid were retained.</li>
-    </ol> 
+        <li><strong>Recursive Refinement:</strong> Clusters were manually reviewed, and noisy groups were re-processed
+            to achieve finer granularity.</li>
+        <li><strong>Representative Sampling:</strong> Only the 250 subreddits closest to each cluster's centroid were
+            retained.</li>
+    </ol>
 
-    <p> <strong>The first improvement</strong> significantly enhanced overall results while reducing 
-        the computational load (RAM usage). By filtering out unnecessary data, the number of active 
+    <p> <strong>The first improvement</strong> significantly enhanced overall results while reducing
+        the computational load (RAM usage). By filtering out unnecessary data, the number of active
         subreddits was reduced from ~50,000 to approximately 17,000.
     </p>
 
-    <p> <strong>The second improvement</strong> expanded the diversity of identified groups. 
-        By performing a second clustering pass on the previously discarded "noise," we successfully 
+    <p> <strong>The second improvement</strong> expanded the diversity of identified groups.
+        By performing a second clustering pass on the previously discarded "noise," we successfully
         identified 13 additional communities, bringing the total to 36 relevant clusters.
     </p>
 
-    <p> <strong>The third improvement</strong> ensured higher community consistency. Given that 
-        the embeddings were dense and spread out, large clusters naturally accumulated noise. 
-        To counter this, we focused on the "core" of each community: by retaining only the subreddits 
-        closest to the centroids, we preserved the most representative samples. Ultimately, the final 
+    <p> <strong>The third improvement</strong> ensured higher community consistency. Given that
+        the embeddings were dense and spread out, large clusters naturally accumulated noise.
+        To counter this, we focused on the "core" of each community: by retaining only the subreddits
+        closest to the centroids, we preserved the most representative samples. Ultimately, the final
         dataset consists of 6,562 subreddits distributed across 36 high-cohesion clusters.
     </p>
 
-    <h4>Results (Pass 1)</h4>   
+    <h4>Results (Pass 1)</h4>
     <div class="ds-grid-2">
         <div>
             <div class="ds-frame" style="height: 300px;">
-                <img src="assets/plots/embeddings_and_clustering/1st_clustering_box_no_filter.png" class="ds-img-responsive">
+                <img src="assets/plots/embeddings_and_clustering/1st_clustering_box_no_filter.png"
+                    class="ds-img-responsive">
             </div>
             <span class="ds-caption">Distribution before filtering (High Noise)</span>
         </div>
         <div>
             <div class="ds-frame" style="height: 300px;">
-                <img src="assets/plots/embeddings_and_clustering/1st_clustering_box_with_filter.png" class="ds-img-responsive">
+                <img src="assets/plots/embeddings_and_clustering/1st_clustering_box_with_filter.png"
+                    class="ds-img-responsive">
             </div>
             <span class="ds-caption">Distribution after keeping 250 best subs (Clean)</span>
         </div>
     </div>
 
-    <p> <strong>The initial plot</strong> (left) illustrates the distribution following the first clustering pass. Clusters were ranked by size, 
-        ranging from 8,070 subreddits in Cluster 0 to 52 in Cluster 29. A significant volume of data points was identified 
-        as outliers due to their high distance from the respective centroids. 
+    <p> <strong>The initial plot</strong> (left) illustrates the distribution following the first clustering pass.
+        Clusters were ranked by size,
+        ranging from 8,070 subreddits in Cluster 0 to 52 in Cluster 29. A significant volume of data points was
+        identified
+        as outliers due to their high distance from the respective centroids.
     </p>
 
-    <p> <strong>The second plot</strong> (right) demonstrates a clear improvement following the distance-based pruning. By retaining only 
-        the subreddits closest to each centroid, we achieved a substantial noise reduction, with most distances falling 
-        below a 0.5 threshold. 
+    <p> <strong>The second plot</strong> (right) demonstrates a clear improvement following the distance-based pruning.
+        By retaining only
+        the subreddits closest to each centroid, we achieved a substantial noise reduction, with most distances falling
+        below a 0.5 threshold.
     </p>
 
-    <p> Following this automated refinement, a manual labeling process was conducted. To facilitate this, 
-        the ten subreddits closest to each centroid were analyzed for every cluster. This allowed us to validate 
-        the thematic consistency of each group and retain only the clusters representing genuine, 
-        well-defined communities. 
+    <p> Following this automated refinement, a manual labeling process was conducted. To facilitate this,
+        the ten subreddits closest to each centroid were analyzed for every cluster. This allowed us to validate
+        the thematic consistency of each group and retain only the clusters representing genuine,
+        well-defined communities.
     </p>
 
     <!-- Cluster Lists Grid -->
@@ -747,28 +886,33 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                     <li><strong>27:</strong> Retrogaming</li>
                     <li><strong>28:</strong> Vape</li>
                     <li><strong>29:</strong> Educational Video</li>
-                </ul>   
+                </ul>
             </div>
         </div>
-        
+
         <!-- Examples -->
         <div class="ds-list-box" style="border-color: var(--text-muted);">
             <h4>Examples near centroid</h4>
             <div style="font-size: 0.9em; line-height: 1.6;">
-                <p><strong>Cluster 2:</strong> oxygennotincluded, swgemu, speedrunnersgame, pokemmo, hollowknight, necreopolis, darksoulsmods, sky3ds, gits_fa, playdreadnought</p>
-                <p><strong>Cluster 9:</strong> soothing, noise, music_share, selfmusic, underground_music, experimental, redditoriginals, glitch, remixes, musicinthemaking</p>
-                <p><strong>Cluster 16:</strong> bitcoinuk, counterparty_xcp, trezor, augur, lisk, bitcoin_unlimited, namecoin, primecoin, shadowcash, nubits</p>
+                <p><strong>Cluster 2:</strong> oxygennotincluded, swgemu, speedrunnersgame, pokemmo, hollowknight,
+                    necreopolis, darksoulsmods, sky3ds, gits_fa, playdreadnought</p>
+                <p><strong>Cluster 9:</strong> soothing, noise, music_share, selfmusic, underground_music, experimental,
+                    redditoriginals, glitch, remixes, musicinthemaking</p>
+                <p><strong>Cluster 16:</strong> bitcoinuk, counterparty_xcp, trezor, augur, lisk, bitcoin_unlimited,
+                    namecoin, primecoin, shadowcash, nubits</p>
             </div>
-        </div>  
+        </div>
     </div>
 
-    <p>Then we took all the subreddits from the remaining clusters and ran clustering again leading to these new clusters:</p>
+    <p>Then we took all the subreddits from the remaining clusters and ran clustering again leading to these new
+        clusters:</p>
 
     <!-- 2nd Pass Visualization -->
     <div class="ds-flex-row">
         <div style="flex: 2;">
             <div class="ds-frame" style="height: 400px;">
-                <img src="assets/plots/embeddings_and_clustering/2nd_clustering_box_with_filter.png" class="ds-img-responsive">
+                <img src="assets/plots/embeddings_and_clustering/2nd_clustering_box_with_filter.png"
+                    class="ds-img-responsive">
             </div>
             <span class="ds-caption">Box plots of the clusters generated from noise (2nd Pass)</span>
         </div>
@@ -799,63 +943,64 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     <div class="ds-frame" style="height: 600px;">
         <iframe src="assets/plots/embeddings_and_clustering/reddit_community_map.html"></iframe>
     </div>
-    <span class="ds-caption">Final interactive community map (single or double click on legend to isolate communities)</span>
+    <span class="ds-caption">Final interactive community map (single or double click on legend to isolate
+        communities)</span>
 
     <div style="margin-top: 30px;">
         <p><b>Interesting observations:</b></p>
         <p> <strong>First,</strong> most of the clusters are dense and well-separated,
-            which successfully achieves our goal of clear topic categorization. 
+            which successfully achieves our goal of clear topic categorization.
         </p>
 
-        <p> <strong>Second,</strong> we noticed some interesting outliers within the clusters. When a subreddit 
-            seems unrelated but is located at the center of a cluster, it suggests that users from 
-            that specific community actively use it, even if the connection isn't obvious at first. 
-            However, some points are clearly misplaced: for example, <b>gamingnews</b> was classified 
-            in the "My Little Pony" cluster, yet its spatial positioning on the map is between 
-            "Retrogaming" and "YouTube/Creators." This visual geography shows where it truly belongs. 
-            While a perfect classification is nearly impossible, our objective was to find the best 
-            balance between minimizing outliers and retaining as many subreddits as possible. 
+        <p> <strong>Second,</strong> we noticed some interesting outliers within the clusters. When a subreddit
+            seems unrelated but is located at the center of a cluster, it suggests that users from
+            that specific community actively use it, even if the connection isn't obvious at first.
+            However, some points are clearly misplaced: for example, <b>gamingnews</b> was classified
+            in the "My Little Pony" cluster, yet its spatial positioning on the map is between
+            "Retrogaming" and "YouTube/Creators." This visual geography shows where it truly belongs.
+            While a perfect classification is nearly impossible, our objective was to find the best
+            balance between minimizing outliers and retaining as many subreddits as possible.
         </p>
 
-        <p> <strong>Third,</strong> there is a visible fragmentation within the "Adult Content" category, which is 
-            composed of several distinct sub-clusters. This is intentional: to avoid categorizing 
-            communities based on specific fetishes, we grouped all pornography-related subreddits 
-            under the general "Adult Content" label, even when the algorithm identified distinct 
-            sub-communities within that larger group. 
+        <p> <strong>Third,</strong> there is a visible fragmentation within the "Adult Content" category, which is
+            composed of several distinct sub-clusters. This is intentional: to avoid categorizing
+            communities based on specific fetishes, we grouped all pornography-related subreddits
+            under the general "Adult Content" label, even when the algorithm identified distinct
+            sub-communities within that larger group.
         </p>
     </div>
 
-   <!-- SECTION: LINGUISTIC VARIATION -->
+    <!-- SECTION: LINGUISTIC VARIATION -->
     <div class="ds-section">
         <h2>Exploring Linguistic Qualities by Community</h2>
         <p>
-            The data reveals a fascinating spectrum of communication styles. By analyzing the 
-            <b>Linguistic Quality Index (LQI)</b> alongside the individual metrics, we can debunk 
+            The data reveals a fascinating spectrum of communication styles. By analyzing the
+            <b>Linguistic Quality Index (LQI)</b> alongside the individual metrics, we can debunk
             some stereotypes and confirm others.
         </p>
         <p>
-            Use the interactive tool below to compare the <b>"Academic"</b> clusters (highest quality) 
-            against the <b>"Casual"</b> clusters (lowest quality), or explore the largest communities on Reddit. 
+            Use the interactive tool below to compare the <b>"Academic"</b> clusters (highest quality)
+            against the <b>"Casual"</b> clusters (lowest quality), or explore the largest communities on Reddit.
             For better visual clarity, only clusters with more than 500 posts are included in this comparison.
         </p>
 
         <!-- The Graph Frame (Full Width) -->
         <div class="ds-frame" style="height: 625px;">
-            <iframe 
-                src="assets/plots/cluster_comparison_normalized2.html" 
-                title="Cluster Linguistic Comparison">
+            <iframe src="assets/plots/cluster_comparison_normalized2.html" title="Cluster Linguistic Comparison">
             </iframe>
         </div>
         <span class="ds-caption">
-            Normalized distribution of linguistic metrics across different community clusters. 
-            Y-Axis represents percentage density to allow fair comparison between large and small clusters. (single or double click on legend to isolate clusters)
+            Normalized distribution of linguistic metrics across different community clusters.
+            Y-Axis represents percentage density to allow fair comparison between large and small clusters. (single or
+            double click on legend to isolate clusters)
         </span>
 
         <!-- START: Side-by-Side Data & Analysis -->
         <div class="ds-grid-2" style="grid-template-columns: auto auto;">
-            
+
             <!-- LEFT: The Data Table -->
-            <div class="ds-list-box" style="padding: 0; overflow: hidden; border-left: none; border-top: 4px solid var(--theme-color);">
+            <div class="ds-list-box"
+                style="padding: 0; overflow: hidden; border-left: none; border-top: 4px solid var(--theme-color);">
                 <table class="ds-table">
                     <thead>
                         <tr>
@@ -866,20 +1011,65 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                     </thead>
                     <tbody>
                         <!-- HIGH LQI SECTION -->
-                        <tr><td colspan="3" class="ds-table-header">🏆 Top 5</td></tr>
-                        <tr><td>Hard Videogames</td><td class="val-high">0.654</td><td>0.549</td></tr>
-                        <tr><td>Politics/Activism</td><td class="val-high">0.644</td><td>0.600</td></tr>
-                        <tr><td>Crypto</td><td class="val-high">0.625</td><td>0.615</td></tr>
-                        <tr><td>Tech/Hardware</td><td class="val-high">0.602</td><td>0.527</td></tr>
-                        <tr><td>Sports (US)</td><td class="val-high">0.594</td><td>0.469</td></tr>
+                        <tr>
+                            <td colspan="3" class="ds-table-header">🏆 Top 5</td>
+                        </tr>
+                        <tr>
+                            <td>Hard Videogames</td>
+                            <td class="val-high">0.654</td>
+                            <td>0.549</td>
+                        </tr>
+                        <tr>
+                            <td>Politics/Activism</td>
+                            <td class="val-high">0.644</td>
+                            <td>0.600</td>
+                        </tr>
+                        <tr>
+                            <td>Crypto</td>
+                            <td class="val-high">0.625</td>
+                            <td>0.615</td>
+                        </tr>
+                        <tr>
+                            <td>Tech/Hardware</td>
+                            <td class="val-high">0.602</td>
+                            <td>0.527</td>
+                        </tr>
+                        <tr>
+                            <td>Sports (US)</td>
+                            <td class="val-high">0.594</td>
+                            <td>0.469</td>
+                        </tr>
 
                         <!-- LOW LQI SECTION -->
-                        <tr><td colspan="3" class="ds-table-header" style="background:#ffebee; color:#d32f2f;">🎪 Bottom 5</td></tr>
-                        <tr><td>Wrestling</td><td class="val-low">0.473</td><td>0.443</td></tr>
-                        <tr><td>German Politics</td><td class="val-low">0.459</td><td>0.520</td></tr>
-                        <tr><td>Retrogaming</td><td class="val-low">0.431</td><td>0.477</td></tr>
-                        <tr><td>Memes/Oddities</td><td class="val-low">0.393</td><td>0.383</td></tr>
-                        <tr><td>Japanese</td><td class="val-low">0.359</td><td>0.370</td></tr>
+                        <tr>
+                            <td colspan="3" class="ds-table-header" style="background:#ffebee; color:#d32f2f;">🎪 Bottom
+                                5</td>
+                        </tr>
+                        <tr>
+                            <td>Wrestling</td>
+                            <td class="val-low">0.473</td>
+                            <td>0.443</td>
+                        </tr>
+                        <tr>
+                            <td>German Politics</td>
+                            <td class="val-low">0.459</td>
+                            <td>0.520</td>
+                        </tr>
+                        <tr>
+                            <td>Retrogaming</td>
+                            <td class="val-low">0.431</td>
+                            <td>0.477</td>
+                        </tr>
+                        <tr>
+                            <td>Memes/Oddities</td>
+                            <td class="val-low">0.393</td>
+                            <td>0.383</td>
+                        </tr>
+                        <tr>
+                            <td>Japanese</td>
+                            <td class="val-low">0.359</td>
+                            <td>0.370</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -888,22 +1078,31 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             <div>
                 <h4 style="margin-top: 0;">1. The Crême de la crême</h4>
                 <p>
-                    <b>The Hardcore Gamers:</b> Surprisingly, the #1 spot is <b>Hard Videogames</b>. Unlike casual gaming, these communities probably rely on denser theory-crafting and mechanics analysis.
+                    <b>The Hardcore Gamers:</b> Surprisingly, the #1 spot is <b>Hard Videogames</b>. Unlike casual
+                    gaming, these communities probably rely on denser theory-crafting and mechanics analysis.
                 </p>
                 <p>
-                    <b>Crypto Complexities:</b> The <b>Crypto</b> cluster (#3) has the highest <b>Cognitive Depth (0.615)</b> in the entire dataset. This suggests that financial and technical discussions drive complex language even more than <b>Politics</b>, 
-                    this might also show that people in such communities have to communicate in a "correct" and "complex" manner in order to belong to their specific social group.".
+                    <b>Crypto Complexities:</b> The <b>Crypto</b> cluster (#3) has the highest <b>Cognitive Depth
+                        (0.615)</b> in the entire dataset. This suggests that financial and technical discussions drive
+                    complex language even more than <b>Politics</b>,
+                    this might also show that people in such communities have to communicate in a "correct" and
+                    "complex" manner in order to belong to their specific social group.".
                 </p>
 
                 <h4 style="margin-top: 25px; color: #d32f2f;">2. The lower class</h4>
                 <p>
-                    <b>Less Formal Communities:</b> <b>Memes/Oddities</b> scores very low (0.393). The data shows low Lexical Richness and Complexity, 
-                    indicating usual communications are probably built on simpler and less formally organized language. Even though, 
-                    informations density might not be worse than in better scoring communities, the way information is shared is just different.
+                    <b>Less Formal Communities:</b> <b>Memes/Oddities</b> scores very low (0.393). The data shows low
+                    Lexical Richness and Complexity,
+                    indicating usual communications are probably built on simpler and less formally organized language.
+                    Even though,
+                    informations density might not be worse than in better scoring communities, the way information is
+                    shared is just different.
                 </p>
                 <p>
-                    <b>Artifacts & Other Causes:</b> The <b>Japanese</b> and <b>German Politics</b> clusters score are the lowest probably due to our algorithms struggling with non-English text.
-                     Meanwhile, <b>Retrogaming</b> scores surprisingly low compared to modern gaming, likely due to be a more casual community with simpler comments rather than technical analysis.
+                    <b>Artifacts & Other Causes:</b> The <b>Japanese</b> and <b>German Politics</b> clusters score are
+                    the lowest probably due to our algorithms struggling with non-English text.
+                    Meanwhile, <b>Retrogaming</b> scores surprisingly low compared to modern gaming, likely due to be a
+                    more casual community with simpler comments rather than technical analysis.
                 </p>
             </div>
         </div>
@@ -919,27 +1118,29 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
         </p>
 
         <div class="ds-frame" style="max-width: 850px; width: 100%; aspect-ratio: 1 / 1; margin: auto;">
-            <iframe 
-                src="assets/plots/cluster_sunburst.html" 
-                title="Cluster Sunburst Chart"
-                style="border: none;">
+            <iframe src="assets/plots/cluster_sunburst.html" title="Cluster Sunburst Chart" style="border: none;">
             </iframe>
         </div>
-        
+
         <span class="ds-caption">
-            It's a Sunburst Chart: click on a slice to zoom in. The outer ring show the individual subreddits with at least 15 posts.
+            It's a Sunburst Chart: click on a slice to zoom in. The outer ring show the individual subreddits with at
+            least 15 posts.
         </span>
 
         <div class="ds-abstract">
-            <strong>TLDR;</strong> 
-            To explore in a different way the Landscape of Reddit communities, 
-            we tried to categorize 476 active subreddits (comunities with at least 200 posts) into a strict hierarchy using only their names inputted into an LLM. 
-            We then split every specific topic into above and bellow average named respectively "top" and "bottom" in the graph, this separation based on their LQI scores.
-            This allows us to see exactly <em>which</em> subreddits are driving the quality up (or down) within their specific niches.
+            <strong>TLDR;</strong>
+            To explore in a different way the Landscape of Reddit communities,
+            we tried to categorize 476 active subreddits (comunities with at least 200 posts) into a strict hierarchy
+            using only their names inputted into an LLM.
+            We then split every specific topic into above and bellow average named respectively "top" and "bottom" in
+            the graph, this separation based on their LQI scores.
+            This allows us to see exactly <em>which</em> subreddits are driving the quality up (or down) within their
+            specific niches.
         </div>
 
         <p>
-            The diagram below is an <strong>Interactive Treemap</strong>. It tries to represent as much of the volume of the dataset 
+            The diagram below is an <strong>Interactive Treemap</strong>. It tries to represent as much of the volume of
+            the dataset
             but we had to drop a great quantities of small subreddits for clarity and ease of navigation.
             <br><br>
             <strong>How to use it:</strong>
@@ -948,20 +1149,19 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
             <br>
             2. <strong>Click on a specific category</strong> (e.g., "Esports & Competitive").
             <br>
-            3. You will see the subreddits split into <span style="color: #0d47a1; font-weight:bold;">High Quality (Blue)</span> 
+            3. You will see the subreddits split into <span style="color: #0d47a1; font-weight:bold;">High Quality
+                (Blue)</span>
             and <span style="color: #b71c1c; font-weight:bold;">Low Quality (Red)</span> relative to their peers.
         </p>
 
         <!-- The Graph Frame -->
         <!-- We use a tall height (970px) because the hierarchy is deep -->
         <div class="ds-frame" style="height: 970px;">
-            <iframe 
-                src="assets/plots/hierarchical_quality_tree.html" 
-                title="Hierarchical Quality Tree"
+            <iframe src="assets/plots/hierarchical_quality_tree.html" title="Hierarchical Quality Tree"
                 style="width: 100%; height: 100%; border: none;">
             </iframe>
         </div>
-        
+
         <span class="ds-caption">
             Hierarchical view of Reddit's Linguistic Landscape. Size = Post Volume | Color = LQI Score.
         </span>
@@ -980,14 +1180,20 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 <div class="insight-body">
                     <div class="insight-content-inner">
                         <p>
-                            While <strong>Tech & Science</strong> is the highest scoring category overall (0.621), the internal divide is massive.
+                            While <strong>Tech & Science</strong> is the highest scoring category overall (0.621), the
+                            internal divide is massive.
                         </p>
                         <ul class="ds-list-clean">
                             <li>
-                                <strong>Academic Rigor:</strong> Subreddits like <em>r/badhistory</em> (0.977) and <em>r/askscience</em> (0.915) represent the peak of Reddit's formal linguistic code.
+                                <strong>Academic Rigor:</strong> Subreddits like <em>r/badhistory</em> (0.977) and
+                                <em>r/askscience</em> (0.915) represent the peak of Reddit's formal linguistic code.
                             </li>
                             <li>
-                                <strong>The Utility Drop:</strong> Surprisingly, <em>r/programming</em> (0.396) scores very low. This is most likely a data artifact: our algorithms look for sentence variation and prose. Programming discussions consist of code snippets, error logs, and succinct logic—formats that lack the specific linguistic structures ("formalities") our metrics are supposed to quantify.
+                                <strong>The Utility Drop:</strong> Surprisingly, <em>r/programming</em> (0.396) scores
+                                very low. This is most likely a data artifact: our algorithms look for sentence
+                                variation and prose. Programming discussions consist of code snippets, error logs, and
+                                succinct logic—formats that lack the specific linguistic structures ("formalities") our
+                                metrics are supposed to quantify.
                             </li>
                         </ul>
                     </div>
@@ -1006,10 +1212,15 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                             One of the most fascinating findings is the high placement of fringe communities.
                         </p>
                         <p>
-                            <em>r/targetedenergyweapons</em> (0.803) scores significantly higher than most mainstream news subreddits. This most likely confirms a linguistic theory: <strong>Conspiracy theorists mimic academic language.</strong> 
+                            <em>r/targetedenergyweapons</em> (0.803) scores significantly higher than most mainstream
+                            news subreddits. This most likely confirms a linguistic theory: <strong>Conspiracy theorists
+                                mimic academic language.</strong>
                         </p>
                         <p>
-                            To sound authoritative, these communities utilize dense vocabulary, complex causality connectors (<em>"consequently," "therefore"</em>), and a detached formal tone. They achieve a high LQI score because the <em>structure</em> of their language is complex, even if the <em>content</em> is factually dubious.
+                            To sound authoritative, these communities utilize dense vocabulary, complex causality
+                            connectors (<em>"consequently," "therefore"</em>), and a detached formal tone. They achieve
+                            a high LQI score because the <em>structure</em> of their language is complex, even if the
+                            <em>content</em> is factually dubious.
                         </p>
                     </div>
                 </div>
@@ -1024,14 +1235,21 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 <div class="insight-body">
                     <div class="insight-content-inner">
                         <p>
-                            Both Gaming and Sports show a clear linguistic divide based on the <em>function</em> of the community:
+                            Both Gaming and Sports show a clear linguistic divide based on the <em>function</em> of the
+                            community:
                         </p>
                         <ul class="ds-list-clean">
                             <li>
-                                <strong>The Analysts:</strong> Communities like <em>r/truegaming</em> (0.904) and <em>r/atletico</em> (0.838) are top-tier. They mirror the behavior of the "Hard Videogame" cluster identified in our earlier analysis—focusing on theory-crafting and tactics.
+                                <strong>The Analysts:</strong> Communities like <em>r/truegaming</em> (0.904) and
+                                <em>r/atletico</em> (0.838) are top-tier. They mirror the behavior of the "Hard
+                                Videogame" cluster identified in our earlier analysis—focusing on theory-crafting and
+                                tactics.
                             </li>
                             <li>
-                                <strong>The Fans:</strong> Mega-communities like <em>r/pcmasterrace</em> (0.351) and <em>r/lakers</em> (0.423) rank at the bottom. These are "Hype" communities where communication is mostly phatic—cheering, memes, and short reactions—prioritizing speed and emotion over structure.
+                                <strong>The Fans:</strong> Mega-communities like <em>r/pcmasterrace</em> (0.351) and
+                                <em>r/lakers</em> (0.423) rank at the bottom. These are "Hype" communities where
+                                communication is mostly phatic—cheering, memes, and short reactions—prioritizing speed
+                                and emotion over structure.
                             </li>
                         </ul>
                     </div>
@@ -1047,16 +1265,20 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
                 <div class="insight-body">
                     <div class="insight-content-inner">
                         <p>
-                            The single highest scoring subreddit in the Entertainment category is... <em>r/wackytictacs</em> (0.954).
+                            The single highest scoring subreddit in the Entertainment category is...
+                            <em>r/wackytictacs</em> (0.954).
                         </p>
                         <p>
-                            At first glance, this seems like a bug. It is a meme subreddit. However, it specializes in <strong>"Copypastas"</strong>—dense blocks of surreal, ironic text. 
+                            At first glance, this seems like a bug. It is a meme subreddit. However, it specializes in
+                            <strong>"Copypastas"</strong>—dense blocks of surreal, ironic text.
                         </p>
                         <div class="ds-todo" style="margin: 10px 0;">
-                            To an algorithm, a 500-word block of intense, unique vocabulary looks like "High Quality" writing.
+                            To an algorithm, a 500-word block of intense, unique vocabulary looks like "High Quality"
+                            writing.
                         </div>
                         <p>
-                            This highlights a crucial limitation of NLP: distinguishing between authentic <em>intelligence</em> and algorithmic <em>complexity</em>.
+                            This highlights a crucial limitation of NLP: distinguishing between authentic
+                            <em>intelligence</em> and algorithmic <em>complexity</em>.
                         </p>
                     </div>
                 </div>
@@ -1069,16 +1291,423 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 
 <!-- SECTION: VARIATION ACROSS REDDIT -->
 <div class="ds-section">
-    <h1>5. Linguistic variation across Reddit</h1>
+    <h1> 5. Linguistic variation across Reddit</h1>
     
+    <div class="ds-abstract">
+        <strong>TLDR;</strong>
+        When we zoom out from individual subreddits to broader topics (e.g., grouping <em>r/LeagueOfLegends</em>
+        and <em>r/Battlefield</em> under "Gaming"), a rigid linguistic hierarchy emerges.
+        Language on Reddit is not random; it is dictated by the <strong>"Genre"</strong> of the community.
+        We found that the <em>intent</em> of a topic (e.g., "Entertainment" vs. "Education") is the single
+        strongest predictor of linguistic complexity, often overriding user demographics.
+    </div>
+    
+    <h2>The Hierarchy of Intent</h2>
+    <p>
+        By aggregating subreddits into their parent topics (based on the hierarchical tree presented above),
+        we observed a "staircase" of linguistic quality. This confirms that communities self-regulate
+        their speech patterns to fit the social norms of their genre.
+    </p>
+    
+    <div class="ds-frame"
+        style="background: white; padding: 20px; height: auto; min-height: 400px; border: 1px solid #eee;">
+        <style>
+            .bar-container {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+    
+            .bar-label {
+                width: 140px;
+                font-weight: bold;
+                font-size: 0.9em;
+                text-align: right;
+                padding-right: 15px;
+            }
+    
+            .bar-track {
+                flex-grow: 1;
+                background: #f0f0f0;
+                height: 30px;
+                border-radius: 4px;
+                overflow: hidden;
+                position: relative;
+            }
+    
+            .bar-fill {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                color: white;
+                font-size: 0.85em;
+                font-weight: bold;
+                transition: width 1s ease-in-out;
+            }
+    
+            .lqi-marker {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: rgba(0, 0, 0, 0.1);
+            }
+    
+            /* Topic Colors */
+            .stem {
+                background: #2e7d32;
+                width: 85%;
+            }
+    
+            /* High */
+            .humanities {
+                background: #1565c0;
+                width: 78%;
+            }
+    
+            /* Mid-High */
+            .hobbies {
+                background: #f9a825;
+                width: 60%;
+            }
+    
+            /* Mid */
+            .entertainment {
+                background: #ef6c00;
+                width: 35%;
+            }
+    
+            /* Mid-Low */
+            .memes {
+                background: #c62828;
+                width: 20%;
+            }
+    
+            /* Low */
+        </style>
+
+        <div class="ds-frame" style="border: none; background: transparent; padding: 0;">
+        
+            <style>
+                .lqi-card {
+                    background: #ffffff;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+                    /* Soft, elegant shadow */
+                    padding: 40px;
+                    max-width: 800px;
+                    margin: 0 auto;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    color: #333;
+                }
+        
+                /* Header Styling */
+                .lqi-header {
+                    text-align: center;
+                    margin-bottom: 35px;
+                    position: relative;
+                }
+        
+                .lqi-title {
+                    margin: 0 0 10px 0;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: #2c3e50;
+                    letter-spacing: -0.5px;
+                }
+        
+                .lqi-legend {
+                    font-size: 0.9rem;
+                    color: #7f8c8d;
+                    font-family: 'Courier New', monospace;
+                    /* Monospace for technical feel */
+                    background: #f8f9fa;
+                    display: inline-block;
+                    padding: 5px 15px;
+                    border-radius: 20px;
+                    border: 1px solid #eee;
+                }
+        
+                /* The Data Grid */
+                .lqi-row {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    height: 30px;
+                }
+        
+                .lqi-label {
+                    width: 140px;
+                    text-align: right;
+                    padding-right: 20px;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    color: #555;
+                }
+        
+                .lqi-bar-track {
+                    flex-grow: 1;
+                    background-color: #f0f2f5;
+                    height: 10px;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    position: relative;
+                }
+        
+                .lqi-bar-fill {
+                    height: 100%;
+                    border-radius: 5px;
+                    width: 0;
+                    /* Animated with CSS */
+                    transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+                }
+        
+                .lqi-value {
+                    width: 60px;
+                    padding-left: 15px;
+                    font-weight: bold;
+                    font-size: 1rem;
+                    color: #333;
+                }
+        
+                /* Colors based on complexity */
+                .fill-stem {
+                    background: linear-gradient(90deg, #66bb6a, #2e7d32);
+                }
+        
+                /* Green */
+                .fill-hum {
+                    background: linear-gradient(90deg, #42a5f5, #1565c0);
+                }
+        
+                /* Blue */
+                .fill-hob {
+                    background: linear-gradient(90deg, #ffee58, #f9a825);
+                }
+        
+                /* Yellow */
+                .fill-ent {
+                    background: linear-gradient(90deg, #ef5350, #c62828);
+                }
+        
+                /* Red */
+                .fill-meme {
+                    background: linear-gradient(90deg, #ab47bc, #4a148c);
+                }
+        
+                /* Purple */
+        
+                /* Animation Trigger (Simple Fade In) */
+                .lqi-row {
+                    opacity: 0;
+                    animation: fadeInUp 0.5s ease forwards;
+                }
+        
+                .lqi-row:nth-child(1) {
+                    animation-delay: 0.1s;
+                }
+        
+                .lqi-row:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+        
+                .lqi-row:nth-child(3) {
+                    animation-delay: 0.3s;
+                }
+        
+                .lqi-row:nth-child(4) {
+                    animation-delay: 0.4s;
+                }
+        
+                .lqi-row:nth-child(5) {
+                    animation-delay: 0.5s;
+                }
+        
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px);
+                    }
+        
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            </style>
+        
+            <div class="lqi-card">
+                <div class="lqi-header">
+                    <h3 class="lqi-title">Average Linguistic Quality (LQI) by Macro-Genre</h3>
+                    <div class="lqi-legend">
+                        0.0 = "Casual/Meme" &nbsp;&nbsp;|&nbsp;&nbsp; 1.0 = "Academic/Formal"
+                    </div>
+                </div>
+        
+                <div class="lqi-body">
+        
+                    <div class="lqi-row">
+                        <div class="lqi-label">STEM & Science</div>
+                        <div class="lqi-bar-track">
+                            <div class="lqi-bar-fill fill-stem" style="width: 85%;"></div>
+                        </div>
+                        <div class="lqi-value">0.85</div>
+                    </div>
+        
+                    <div class="lqi-row">
+                        <div class="lqi-label">Humanities</div>
+                        <div class="lqi-bar-track">
+                            <div class="lqi-bar-fill fill-hum" style="width: 78%;"></div>
+                        </div>
+                        <div class="lqi-value">0.78</div>
+                    </div>
+        
+                    <div class="lqi-row">
+                        <div class="lqi-label">Niche Hobbies</div>
+                        <div class="lqi-bar-track">
+                            <div class="lqi-bar-fill fill-hob" style="width: 60%;"></div>
+                        </div>
+                        <div class="lqi-value">0.60</div>
+                    </div>
+        
+                    <div class="lqi-row">
+                        <div class="lqi-label">Entertainment</div>
+                        <div class="lqi-bar-track">
+                            <div class="lqi-bar-fill fill-ent" style="width: 35%;"></div>
+                        </div>
+                        <div class="lqi-value">0.35</div>
+                    </div>
+        
+                    <div class="lqi-row">
+                        <div class="lqi-label">Memes</div>
+                        <div class="lqi-bar-track">
+                            <div class="lqi-bar-fill fill-meme" style="width: 20%;"></div>
+                        </div>
+                        <div class="lqi-value">0.20</div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    
+
+    </div>
+    <span class="ds-caption">
+        Aggregated LQI scores. Note the sharp drop-off between "Information-seeking" communities (Top 3)
+        and "Reaction-based" communities (Bottom 2).
+    </span>
+    
+    <h3>Case Study: The Video Game Spectrum</h3>
+    <p>
+        The danger of clustering is over-generalization. If we group <strong>r/LeagueOfLegends</strong> (an esports news
+        hub)
+        and <strong>r/TrueGaming</strong> (a discussion forum) under the single label Video Games, we average out
+        their distinct traits. However, our hierarchical analysis reveals a massive internal variance within this specific
+        topic.
+    </p>
+    
+    <div class="ds-grid-2">
+        <div class="ds-list-box" style="border-left: 4px solid #c62828;">
+            <h4>The "Play" Communities</h4>
+            <div class="ds-list-clean">
+                <ul>
+                    <li><strong>Archetype:</strong> r/Gaming, r/Overwatch, r/FIFA</li>
+                    <li><strong>Avg LQI:</strong> <span style="color:#c62828; font-weight:bold;">0.32 (Low)</span></li>
+                    <li><strong>Trait:</strong> High volume, low complexity.</li>
+                </ul>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                These communities function like a <strong>sports bar</strong>. The language is characterized by
+                phatic expressions (<em>"GG", "Nice play", "RIP"</em>), slang, and heavy reliance on visual context
+                (video clips). The "Low Quality" score here reflects <strong>efficiency</strong>, not lack of intelligence.
+            </p>
+        </div>
+    
+        <div class="ds-list-box" style="border-left: 4px solid #2e7d32;">
+            <h4>The "Theory" Communities</h4>
+            <div class="ds-list-clean">
+                <ul>
+                    <li><strong>Archetype:</strong> r/TrueGaming, r/CompetitiveOverwatch</li>
+                    <li><strong>Avg LQI:</strong> <span style="color:#2e7d32; font-weight:bold;">0.71 (High)</span></li>
+                    <li><strong>Trait:</strong> Low volume, high complexity.</li>
+                </ul>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                These communities function like a <strong>lecture hall</strong>. Users discuss game mechanics, balance
+                updates, and industry trends. To participate, one must write full paragraphs, use technical terminology,
+                and structure arguments logically.
+            </p>
+        </div>
+    </div>
+    
+    <h3>The "Two Faces" of Political Discourse</h3>
+    <p>
+        Politics on Reddit exhibits a unique <strong>bimodal distribution</strong>. While we initially expected highly
+        polarized "Echo Chambers" to exhibit simple, tribal language, the data reveals a sharp divide based on community
+        <em>format</em> rather than ideology.
+    </p>
+    
+    <div class="ds-grid-2">
+        <div class="ds-list-box" style="border-left: 4px solid #1565c0;">
+            <h4 style="color: #1565c0;">Type A: The "War Rooms"</h4>
+            <div class="ds-list-clean">
+                <ul>
+                    <li><strong>Examples:</strong> r/Politics, r/Conservative, r/Libertarian</li>
+                    <li><strong>LQI Score:</strong> <span style="font-weight:bold; color:#1565c0;">High (~0.65)</span></li>
+                </ul>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                In these text-heavy communities, polarization <strong>increases</strong> linguistic complexity. Users arm
+                themselves with citations, formal rhetoric, and dense paragraphs to win the debate. Here, a high LQI acts
+                as a barrier to entry: if you can't write like a pundit, you get downvoted.
+            </p>
+        </div>
+    
+        <div class="ds-list-box" style="border-left: 4px solid #7b1fa2;">
+            <h4 style="color: #7b1fa2;">Type B: The "Meme Warriors"</h4>
+            <div class="ds-list-clean">
+                <ul>
+                    <li><strong>Examples:</strong> r/PoliticalHumor, r/The_Donald, r/LateStageCapitalism</li>
+                    <li><strong>LQI Score:</strong> <span style="font-weight:bold; color:#7b1fa2;">Low (~0.35)</span></li>
+                </ul>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                These communities prioritize <strong>viral impact</strong> over debate. The discourse is driven by image
+                macros, slogans, and irony. While just as political as Type A, their linguistic fingerprint is identical to
+                r/Funny or r/Gaming.
+            </p>
+        </div>
+    </div>
+    
+    <p style="margin-top: 20px;">
+        Political bias itself does not make you dumber (linguistically). The drop in quality
+        only happens when a community shifts from <em>discussing</em> the news to <em>meming</em> it.
+    </p>
+    
+    <div class="ds-highlight" style="background: #e3f2fd; border-left: 5px solid #2196f3; padding: 20px; margin-top: 40px;">
+        <h3 style="margin-top: 0; color: #0d47a1;">Language as a Social Fingerprint</h3>
+        <p>
+            Our analysis demonstrates that Reddit is not a monolith. It is a federation of thousands of
+            micro-nations, each with its own linguistic constitution.
+        </p>
+        <p>
+            The clustering reveals that <strong>Linguistic Quality is functional</strong>.
+            High LQI is not inherently better—it is simply the tool used for <strong>Storage</strong> (History, Science),
+            while Low LQI is the tool used for <strong>Flow</strong> (Humor, Gaming, Sports).
+            Understanding these traits allows us to map the Digital Geography of the internet, proving that
+            where we post determines how we speak.
+        </p>
+    </div>
 </div>
 
 <!-- SECTION: NEGATIVITY -->
 <div class="ds-section">
     <h1>6. Linguistic quality and negativity</h1>
-    
+
     <div class="ds-abstract">
-        <strong>TLDR;</strong> A common assumption is that negative content is "lower quality"—think of flame wars, trolls, and insults. 
+        <strong>TLDR;</strong> A common assumption is that negative content is "lower quality"—think of flame wars,
+        trolls, and insults.
         However, our data tells a more complex story.
     </div>
 
@@ -1091,42 +1720,53 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     </div>
 
     <p>
-        The plot above shows the posts' scores for each variable, depending on the posts' sentiment link. However, only 
+        The plot above shows the posts' scores for each variable, depending on the posts' sentiment link. However, only
         <em>vader_compound</em>, another measure of sentiment, shows a meaningful difference between positive and
-        negative posts. As such, we cannot dismiss negativity as simply being "low-quality", but indeed both dimensions 
+        negative posts. As such, we cannot dismiss negativity as simply being "low-quality", but indeed both dimensions
         are capable of both low-quality "slop" and high-quality arguments.
     </p>
 
     <div class="ds-frame" style="max-width: 850px; width: 100%; aspect-ratio: 2 / 1; margin: auto;">
-        <iframe 
-            src="assets/plots/lqi_nega_scatter.html" 
-            title="Relationship between LQI and Subreddit Negativity"
+        <iframe src="assets/plots/lqi_nega_scatter.html" title="Relationship between LQI and Subreddit Negativity"
             style="border: none;">
         </iframe>
     </div>
 
-    <p>
-        Looking at the relationship between LQI and the proportion of negative
-        links in a subreddit, we find that indeed, there is no correlation
-        between negativity and linguistic quality (R<sup>2</sup> = 0.02). However,
-        we do see that high-LQI communities tend to be less negative, while we
-        a cluster of moderate-LQI, but high negativity tends to form, comprised mostly
-        of "drama-centric" subreddits. Thus, we see that linguistic competence is not
-        intrinsically linked with negativity or positivity, but is a tool that allows
-        users to express their views depending on the context they are in (i.e. negative or
-        positive emotions will not be shared in the same manner in <em>r/memes</em> or <em>r/badhistory</em>).  
-    </p>
-
     <div class="ds-grid-2">
-        <div class="ds-blockquote">
-            "Anger does not equal stupidity. In fact, some of the most linguistically complex posts in our dataset were highly negative rants."
+        <div>
+            <h4>The Trend Line is Misleading</h4>
+            <p>
+                While the red trend line suggests a mild correlation where better writing (higher LQI) aligns with less
+                negativity(R<sup>2</sup> = 0.02), the
+                data points form a scattered cloud rather than a clear pattern, indicating that structure is a poor
+                predictor of
+                sentiment. This is largely because the lowest quality writing is often not hostile, but simply brief
+                and happy. Casual
+                comments like "lol" or "This is awesome!" score poorly on complexity metrics but sit at the very bottom
+                of the
+                negativity scale, effectively breaking the assumption that low quality equals low civility.
+            </p>
         </div>
         <div>
+            <h4>Complexity Enables "Sophisticated Conflict"</h4>
             <p>
-                When we plotted LQI against sentiment, we found that extremely negative posts often had <strong>higher</strong> 
-                structural complexity than neutral posts. Anger on Reddit often manifests as detailed, itemized argumentation.
-                The "dumbest" content (lowest LQI) was actually found in the "casual positive" quadrant—short, low-effort agreement comments like "This is awesome!" or "lol".
+                Conversely, high linguistic competence does not guarantee kindness; it often just provides better tools
+                for aggression.
+                The data reveals distinct clusters of high-LQI posts that are deeply negative, supporting the argument
+                that anger often
+                manifests as detailed, itemized argumentation. Sophisticated writers are just as capable of producing
+                toxic drama as
+                they are polite essays. Therefore, we cannot assume a direct relation because high literacy scales up
+                the capacity for
+                both detailed kindness and complex cruelty.
             </p>
+        </div>
+    </div>
+
+    <div class="ds-grid">
+        <div class="ds-blockquote">
+            "Anger does not equal stupidity. In fact, some of the most linguistically complex posts in our dataset were
+            highly negative rants."
         </div>
     </div>
 </div>
@@ -1135,13 +1775,16 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
 <div class="ds-section">
     <h1>7. Conclusion</h1>
     <p>
-        So, who wins the "War of the Learned"? Our analysis shows that Reddit is not a monolith of poor grammar, 
+        So, who wins the "War of the Learned"? Our analysis shows that Reddit is not a monolith of poor grammar,
         nor is it a citadel of high intellect. It is a federation of digital city-states, each with its own dialect.
     </p>
     <p>
-        While academic and political communities maintain rigorous standards of Formal Code, other communities have optimized 
-        their language for speed and connection (Contextual Code). Defining one as "better" ignores the function of language. 
-        However, if you are looking for complex sentence structures and varied vocabulary, you are more likely to find it in a 
+        While academic and political communities maintain rigorous standards of Formal Code, other communities have
+        optimized
+        their language for speed and connection (Contextual Code). Defining one as "better" ignores the function of
+        language.
+        However, if you are looking for complex sentence structures and varied vocabulary, you are more likely to find
+        it in a
         heated political debate than in a friendly fan appreciation thread.
     </p>
 </div>
@@ -1167,7 +1810,7 @@ subtitle: Data-driven Linguistic Quality Analysis based on Reddit data
     function toggleInsight(headerElement) {
         // Identify the parent card
         const card = headerElement.parentElement;
-        
+
         // Check if it is currently active
         const isActive = card.classList.contains('active');
 
